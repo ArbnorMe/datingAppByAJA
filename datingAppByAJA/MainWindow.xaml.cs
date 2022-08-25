@@ -18,6 +18,7 @@ namespace datingAppByAJA
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// Anton
     public partial class MainWindow : Window
     {
         public MainWindow()

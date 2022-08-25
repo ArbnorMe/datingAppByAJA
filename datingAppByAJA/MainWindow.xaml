@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:datingAppByAJA"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="verheiratetabergeil.de" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="751*"/>
+        </Grid.ColumnDefinitions>
 
     </Grid>
 </Window>

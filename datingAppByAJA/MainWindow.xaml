@@ -6,19 +6,33 @@
         xmlns:local="clr-namespace:datingAppByAJA"
         mc:Ignorable="d"
         Title="verheiratetabergeil.de" Height="450" Width="800">
-    <Grid x:Name="grid" Background="MediumPurple">
+    <Grid x:Name="grid" Background="#FF828282">
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.4*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-
-        <Button Content="Einstellungen" Margin="10,10,42,219" Click="Button_Click" />
-        <Image Grid.Column="2" HorizontalAlignment="Left" Height="111" Margin="564,0,0,0" VerticalAlignment="Top" Width="103" Source="/logo_verheiratetabergeil_de.png"/>
+        <Image Grid.Column="4" HorizontalAlignment="Left" Height="111" Margin="240,0,0,0" VerticalAlignment="Top" Width="103" Source="/logo_verheiratetabergeil_de.png" Grid.RowSpan="2"/>
+        <Button Content="Startseite" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114"/>
+        <Button Content="Anmelden" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114" Grid.Column="1"/>
+        <Button Content="Registrieren" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114" Grid.Column="2"/>
+        <Button Content="Q&amp;A" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114" Grid.Column="3"/>
+        <TextBox HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="229" Height="41" Grid.ColumnSpan="4"/>
+        <TextBox HorizontalAlignment="Center" Grid.Row="4" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="229" Height="41" Grid.ColumnSpan="4"/>
+        <Button Content="Anmelden" HorizontalAlignment="Left" Height="41" VerticalAlignment="Center" Width="114" Grid.ColumnSpan="2" Grid.Column="3" Margin="114,0,0,0" Grid.Row="2"/>
+        <Button Content="Passwort vergessen" HorizontalAlignment="Left" Height="41" VerticalAlignment="Center" Width="114" Grid.ColumnSpan="2" Grid.Column="3" Margin="114,0,0,0" Grid.Row="4"/>
+        <Label Content="E-Mail" HorizontalAlignment="Left" Margin="114,110,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label Content="Passwort" HorizontalAlignment="Left" Margin="114,27,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

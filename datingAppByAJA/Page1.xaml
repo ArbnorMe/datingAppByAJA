@@ -30,9 +30,11 @@
         <Button Content="Anmelden" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114" Grid.Column="1"/>
         <Button Content="Registrieren" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114" Grid.Column="2"/>
         <Button Content="Q&amp;A" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114" Grid.Column="3"/>
-        <TextBox HorizontalAlignment="Center" Grid.Row="2" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Center" Width="229" Height="41" Grid.ColumnSpan="4"/>
-        <TextBox HorizontalAlignment="Center" Grid.Row="4" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Center" Width="229" Height="41" Grid.ColumnSpan="4"/>
+        <TextBox HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="229" Height="41" Grid.ColumnSpan="4"/>
+        <TextBox HorizontalAlignment="Center" Grid.Row="4" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="229" Height="41" Grid.ColumnSpan="4"/>
         <Button Content="Anmelden" HorizontalAlignment="Left" Height="41" VerticalAlignment="Center" Width="114" Grid.ColumnSpan="2" Grid.Column="3" Margin="114,0,0,0" Grid.Row="2"/>
         <Button Content="Passwort vergessen" HorizontalAlignment="Left" Height="41" VerticalAlignment="Center" Width="114" Grid.ColumnSpan="2" Grid.Column="3" Margin="114,0,0,0" Grid.Row="4"/>
+        <Label Content="E-Mail" HorizontalAlignment="Left" Margin="114,110,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label Content="Passwort" HorizontalAlignment="Left" Margin="114,27,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
     </Grid>
 </Page>

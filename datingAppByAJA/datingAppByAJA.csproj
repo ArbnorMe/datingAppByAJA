@@ -6,4 +6,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="logo_verheiratetabergeil_de.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="logo_verheiratetabergeil_de.png" />
+  </ItemGroup>
+
 </Project>

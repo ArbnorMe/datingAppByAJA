@@ -10,17 +10,23 @@
 
     <Grid x:Name="grid" Background="MediumPurple">
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-
-        <Button Content="Einstellungen" Margin="10,10,42,219" Click="Button_Click" />
-        <Image Grid.Column="2" HorizontalAlignment="Left" Height="111" Margin="564,0,0,0" VerticalAlignment="Top" Width="103" Source="/logo_verheiratetabergeil_de.png"/>
+        <Image Grid.Column="4" HorizontalAlignment="Left" Height="111" Margin="240,0,0,0" VerticalAlignment="Top" Width="103" Source="/logo_verheiratetabergeil_de.png" Grid.RowSpan="2"/>
+        <Button Content="Startseite" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114"/>
+        <Button Content="Anmelden" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114" Grid.Column="1"/>
+        <Button Content="Registrieren" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114" Grid.Column="2"/>
+        <Button Content="Hilfe" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114" Grid.Column="3"/>
     </Grid>
 </Page>

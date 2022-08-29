@@ -35,6 +35,19 @@ namespace datingAppByAJA
 
             string query = $"Insert into city(Mail, Password)" + 
                 $" values('{email}','{passwort}')";
+            verbindungsAusgabe.Text = ("Daten geschrieben");
+            var command = new MySqlCommand(query, con);
+
+            try
+            {
+                con.Open();
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                verbindungsAusgabe.Text = ("leer");
+            }
         }
     }
 }

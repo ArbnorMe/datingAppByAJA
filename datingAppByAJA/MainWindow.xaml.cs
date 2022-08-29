@@ -28,7 +28,13 @@ namespace datingAppByAJA
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            string passwort = passwortEingabe.Text;
+            string email = emailEingabe.Text;
+            var con =
+                new MySqlConnection("server=arbnor.database.windows.net;user id=U886J2D85QAn6B8EBrnp;password=frVnoGZ53KaBZ58L9428;database=datingApp");
 
+            string query = $"Insert into city(Mail, Password)" + 
+                $" values('{email}','{passwort}')";
         }
     }
 }

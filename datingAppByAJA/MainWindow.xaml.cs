@@ -34,7 +34,7 @@ namespace datingAppByAJA
             var con =
                 new MySqlConnection("server=datingapp.mysql.arbnor.me;user id=root;password=frVnoGZ53KaBZ58L9428;database=datingApp");
 
-            string query = $"Insert into user(password, email)" +
+            string query = $"Insert into userTable(password, email)" +
                 $" values('{password}','{email}')";
             MessageBox.Show("Daten geschrieben");
             var command = new MySqlCommand(query, con);

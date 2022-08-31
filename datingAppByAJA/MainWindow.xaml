@@ -32,7 +32,7 @@
         <TextBox Name="passwortEingabe" HorizontalAlignment="Center" Grid.Row="4" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="229" Height="41" Grid.ColumnSpan="4"/>
         <Button Content="Anmelden" HorizontalAlignment="Left" Height="41" VerticalAlignment="Center" Width="114" Grid.ColumnSpan="2" Grid.Column="3" Margin="114,0,0,0" Grid.Row="2" Click="Button_Click_1"/>
         <Button Content="Passwort vergessen" HorizontalAlignment="Left" Height="41" VerticalAlignment="Center" Width="114" Grid.ColumnSpan="2" Grid.Column="3" Margin="114,0,0,0" Grid.Row="4"/>
-        <Label Content="E-Mail" HorizontalAlignment="Left" Margin="114,105,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label Content="E-Mail" HorizontalAlignment="Left" Margin="114,100,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <Label Content="Passwort" HorizontalAlignment="Left" Margin="114,27,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

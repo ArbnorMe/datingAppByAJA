@@ -26,15 +26,16 @@ namespace datingAppByAJA
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string passwort = passwortEingabe.Text;
+            string password = passwortEingabe.Text;
             string email = emailEingabe.Text;
+            MessageBox.Show("Es wird jetzt zum Server verbunden");
             var con =
                 new MySqlConnection("server=datingapp.mysql.arbnor.me;user id=root;password=frVnoGZ53KaBZ58L9428;database=datingApp");
 
-            string query = $"Insert into user(email, password)" + 
-                $" values('{email}','{passwort}')";
+            string query = $"Insert into user(password, email)" +
+                $" values('{password}','{email}')";
             MessageBox.Show("Daten geschrieben");
             var command = new MySqlCommand(query, con);
 

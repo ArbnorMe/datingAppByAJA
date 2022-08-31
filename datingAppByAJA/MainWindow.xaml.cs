@@ -31,11 +31,11 @@ namespace datingAppByAJA
             string passwort = passwortEingabe.Text;
             string email = emailEingabe.Text;
             var con =
-                new MySqlConnection("server=arbnor.database.windows.net;user id=U886J2D85QAn6B8EBrnp;password=frVnoGZ53KaBZ58L9428;database=datingApp");
+                new MySqlConnection("server=datingapp.mysql.arbnor.me;user id=root;password=frVnoGZ53KaBZ58L9428;database=datingApp");
 
-            string query = $"Insert into city(Mail, Password)" + 
+            string query = $"Insert into user(email, password)" + 
                 $" values('{email}','{passwort}')";
-            verbindungsAusgabe.Text = ("Daten geschrieben");
+            MessageBox.Show("Daten geschrieben");
             var command = new MySqlCommand(query, con);
 
             try
@@ -46,7 +46,7 @@ namespace datingAppByAJA
             }
             catch (Exception ex)
             {
-                verbindungsAusgabe.Text = ("leer");
+                MessageBox.Show(ex.Message);
             }
         }
     }

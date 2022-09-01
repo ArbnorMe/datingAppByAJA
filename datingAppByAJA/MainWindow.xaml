@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:datingAppByAJA"
         mc:Ignorable="d"
-        Title="verheiratetabergeil.de" Height="450" Width="800">
+        Title="verheiratetabergeil.de" Height="527" Width="800">
     <Grid x:Name="grid" Background="#FF828282">
-        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
+        <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top">
             <Button Content="Startseite" MinWidth="100" Click="BtnStartseite"></Button>
             <Button Content="Registrierung" MinWidth="100" Margin="10,0,0,0" Click="BtnRegistrieren"></Button>
         </StackPanel>
-        <Frame x:Name="Main" Margin="0,35,0,0"/>
+        <Image Width="100" Height="100" Margin="700,0,0,0" Source="/logo_verheiratetabergeil_de.png" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Frame x:Name="Main" Margin="0,40,0,0"/>
 
     </Grid>
 </Window>

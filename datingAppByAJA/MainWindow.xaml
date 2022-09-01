@@ -11,8 +11,8 @@
             <Button Content="Startseite" MinWidth="100" Click="BtnStartseite"></Button>
             <Button Content="Registrierung" MinWidth="100" Margin="10,0,0,0" Click="BtnRegistrieren"></Button>
         </StackPanel>
-        <Image Width="100" Height="100" Margin="700,0,0,0" Source="/logo_verheiratetabergeil_de.png" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Frame x:Name="Main" Margin="0,40,0,0" NavigationUIVisibility="Hidden"/>
+        <Image Width="112" Height="100" Margin="685,0,0,0" Source="/logo_verheiratetabergeil_de.png" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
     </Grid>
 </Window>

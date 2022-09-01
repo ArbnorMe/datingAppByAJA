@@ -19,16 +19,13 @@
             <ColumnDefinition Width="590*"></ColumnDefinition>
             <ColumnDefinition Width="100*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column="2" Margin="0,0,0,0" Source="/logo_verheiratetabergeil_de.png"/>
-        <Button Content="Zur Anmeldung" HorizontalAlignment="Center" Width="110" Margin="0,0,0,64"/>
-        <Button Content="Q&amp;A" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="110" Grid.Column="1"/>
-        <TextBox Name="emailEingabe" HorizontalAlignment="Left" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="41" Margin="90,108,0,0" Grid.Column="1"/>
-        <TextBox Name="passwortEingabe" HorizontalAlignment="Left" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="41" Margin="229,178,0,0" Grid.Column="1"/>
-        <Button Content="Registrieren" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="114" Grid.Column="1" Margin="240,33,0,0" Grid.Row="1" Click="Button_Click_1"/>
+        <TextBox Name="emailEingabe" HorizontalAlignment="Left" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="41" Margin="151,116,0,0" Grid.Column="1"/>
+        <TextBox Name="passwortEingabe" HorizontalAlignment="Left" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="41" Margin="152,178,0,0" Grid.Column="1"/>
+        <Button Content="Registrieren" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="114" Grid.Column="1" Margin="458,276,0,0" Grid.Row="1" Click="Button_Click_1"/>
         <Label Content="E-Mail" HorizontalAlignment="Left" Margin="0,116,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1"/>
         <Label Content="Passwort" HorizontalAlignment="Left" Margin="0,178,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1"/>
-        <Label Content="Passwort wiederholen" HorizontalAlignment="Left" Margin="28,228,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Passwort wiederholen" HorizontalAlignment="Left" Margin="0,241,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1"/>
         <Button Content="Bug melden" Grid.Column="2" Margin="0,276,0,0" Grid.Row="1" VerticalAlignment="Top" Height="70" HorizontalAlignment="Right" Width="70"/>
-        <TextBox x:Name="passwortEingabeWiederholen" HorizontalAlignment="Left" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="41" Margin="229,241,0,0" Grid.Column="1"/>
+        <TextBox x:Name="passwortEingabeWiederholen" HorizontalAlignment="Left" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="41" Margin="152,241,0,0" Grid.Column="1"/>
     </Grid>
 </Page>

@@ -10,18 +10,12 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="0.3*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="0.3*"></RowDefinition>
-            <RowDefinition Height="0.4*"></RowDefinition>
-            <RowDefinition Height="0.3*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="auto"/>
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+            <ColumnDefinition Width="400*"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Image Grid.Column="4" HorizontalAlignment="Left" Height="111" Margin="240,0,0,0" VerticalAlignment="Top" Width="103" Source="/logo_verheiratetabergeil_de.png" Grid.RowSpan="2"/>
         <Button Content="Startseite" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114"/>

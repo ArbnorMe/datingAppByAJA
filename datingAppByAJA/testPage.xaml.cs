@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -30,26 +31,33 @@ namespace datingAppByAJA
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            pbStatus.Value++;
             string password = passwortEingabe.Text;
             string email = emailEingabe.Text;
             var con =
                 new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
-
+            pbStatus.Value++;
             string query = $"Insert into userTable(password, email)" +
                 $" values('{password}','{email}')";
             MessageBox.Show("Daten geschrieben");
             var command = new MySqlCommand(query, con);
-
+            pbStatus.Value++;
             try
             {
                 con.Open();
                 command.ExecuteNonQuery();
                 con.Close();
+                pbStatus.Value++;
             }
             catch (Exception ex)
             {
+                pbStatus.Value++;
                 MessageBox.Show(ex.Message);
             }
+            pbStatus.Value = 4;
+
+            Thread.Sleep(3000);
+            pbStatus.Value = 0;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -54,7 +54,7 @@ namespace datingAppByAJA
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string suchen = sucheEingabe.Text;
+            string suchen = suchEingabe.Text;
             var con =
                 new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
             MySqlCommand cmd = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE password LIKE \"{suchen}\"");

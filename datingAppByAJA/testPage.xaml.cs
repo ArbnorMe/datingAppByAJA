@@ -8,22 +8,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MySqlConnector;
 
 namespace datingAppByAJA
 {
     /// <summary>
-    /// Interaktionslogik für testPageDB.xaml
+    /// Interaktionslogik für testPage.xaml
     /// </summary>
-    /// Made by Anton, Joshua and Arbnor
-    public partial class testPageDB : Window
+    public partial class testPage : Page
     {
         string serverMySql = "datingapp.mysql.arbnor.me";
         string userIdMySql = "root";
         string passwordMySql = "frVnoGZ53KaBZ58L9428";
         string databaseMySql = "datingApp";
-        public testPageDB()
+        public testPage()
         {
             InitializeComponent();
         }

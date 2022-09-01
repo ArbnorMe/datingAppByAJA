@@ -9,7 +9,7 @@
     <Grid x:Name="grid" Background="#FF828282">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.3*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
             <RowDefinition Height="0.3*"></RowDefinition>
             <RowDefinition Height="0.4*"></RowDefinition>
             <RowDefinition Height="0.3*"></RowDefinition>
@@ -24,16 +24,14 @@
             <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Image Grid.Column="4" HorizontalAlignment="Left" Height="111" Margin="240,0,0,0" VerticalAlignment="Top" Width="103" Source="/logo_verheiratetabergeil_de.png" Grid.RowSpan="2"/>
-        <Button Content="Startseite" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114"/>
-        <Button Content="Anmelden" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114" Grid.Column="1"/>
-        <Button Content="Registrieren" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114" Grid.Column="2"/>
-        <Button Content="Q&amp;A" HorizontalAlignment="Center" Height="41" VerticalAlignment="Center" Width="114" Grid.Column="3"/>
         <TextBox Name="emailEingabe" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="229" Height="41" Grid.ColumnSpan="4"/>
         <TextBox Name="passwortEingabe" HorizontalAlignment="Center" Grid.Row="4" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="229" Height="41" Grid.ColumnSpan="4"/>
         <Button Content="Anmelden" HorizontalAlignment="Left" Height="41" VerticalAlignment="Center" Width="114" Grid.ColumnSpan="2" Grid.Column="3" Margin="114,0,0,0" Grid.Row="2" Click="Button_Click_1"/>
-        <Button Content="Passwort vergessen" HorizontalAlignment="Left" Height="41" VerticalAlignment="Center" Width="114" Grid.ColumnSpan="2" Grid.Column="3" Margin="114,0,0,0" Grid.Row="4" Click="Button_Click"/>
+        <Button Content="DB durchsuchen" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="114" Grid.ColumnSpan="2" Grid.Column="3" Margin="114,34,0,0" Grid.Row="5" Click="Button_Click"/>
         <Label Content="E-Mail" HorizontalAlignment="Left" Margin="114,100,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <Label Content="Passwort" HorizontalAlignment="Left" Margin="114,27,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <Button Content="TEST Button" HorizontalAlignment="Left" Height="41" VerticalAlignment="Bottom" Width="114" Grid.Column="4" Margin="159,0,0,131" Grid.Row="3" Click="testButton_Click" Grid.RowSpan="3"/>
+        <Button Content="TEST Button" HorizontalAlignment="Left" Height="41" VerticalAlignment="Center" Width="114" Grid.Column="3" Margin="114,0,0,0" Grid.Row="4" Click="testButton_Click" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="sucheEingabe" HorizontalAlignment="Center" Grid.Row="5" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="41" Grid.ColumnSpan="4" Margin="0,34,0,0"/>
+        <Label Content="Suchen" HorizontalAlignment="Left" Margin="114,10,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

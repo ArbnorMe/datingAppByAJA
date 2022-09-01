@@ -54,10 +54,18 @@ namespace datingAppByAJA
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string email = emailEingabe.Text;
+            string suchen = sucheEingabe.Text;
             var con =
                 new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM datingApp.userTable WHERE password LIKE \"ä\"");
+            MySqlCommand cmd = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE password LIKE \"{suchen}\"");
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                // Du kannst Werte aus Spaltennamen abrufen
+                Console.WriteLine(reader["customerName"].ToString());
+                //Oder gebe den Wert aus der columnID zurück, in diesem Fall 0
+                Console.WriteLine(reader.GetInt32(0));
+            }
         }
 
         private void testButton_Click(object sender, RoutedEventArgs e)

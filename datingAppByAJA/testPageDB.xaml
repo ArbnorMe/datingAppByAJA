@@ -34,5 +34,6 @@
         <Button Content="Passwort vergessen" HorizontalAlignment="Left" Height="41" VerticalAlignment="Center" Width="114" Grid.ColumnSpan="2" Grid.Column="3" Margin="114,0,0,0" Grid.Row="4" Click="Button_Click"/>
         <Label Content="E-Mail" HorizontalAlignment="Left" Margin="114,100,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <Label Content="Passwort" HorizontalAlignment="Left" Margin="114,27,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button Content="TEST Button" HorizontalAlignment="Left" Height="41" VerticalAlignment="Bottom" Width="114" Grid.Column="4" Margin="159,0,0,131" Grid.Row="3" Click="testButton_Click" Grid.RowSpan="3"/>
     </Grid>
 </Window>

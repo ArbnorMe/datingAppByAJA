@@ -57,21 +57,12 @@ namespace datingAppByAJA
             string email = emailEingabe.Text;
             var con =
                 new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM datingApp.userTable WHERE password LIKE \"ä\"");
+        }
 
-            string query = $"SELECT * FROM datingApp.userTable WHERE email LIKE {email}";
-            MessageBox.Show("Daten gelesen");
-            var command = new MySqlCommand(query, con);
-
-            try
-            {
-                con.Open();
-                command.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        private void testButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Test\"");
         }
     }
 }

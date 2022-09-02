@@ -14,6 +14,6 @@
         </StackPanel>
         <Frame x:Name="Main" Margin="0,40,0,0" NavigationUIVisibility="Hidden"/>
         <Image Width="112" Height="100" Margin="685,0,0,0" Source="/logo_verheiratetabergeil_de.png" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-
+            
     </Grid>
 </Window>

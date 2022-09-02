@@ -37,6 +37,7 @@
 
 
           
+            <StackPanel Grid.Row="1" >
                 <StackPanel Orientation="Horizontal">
                     <TextBox FontFamily="Helvetica"
                              FontWeight="Light"
@@ -50,8 +51,11 @@
                              HorizontalContentAlignment="Left"
                              Opacity="0.5"
                              Height="25"
-                             Margin="63,0,0,0"/>
                             
+                    <iconPacks:PackIconMaterial Kind="Account" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White"/>
                 </StackPanel>
         </Grid>
     </Grid>

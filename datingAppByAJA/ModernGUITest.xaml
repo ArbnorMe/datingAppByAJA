@@ -9,6 +9,6 @@
       Title="ModernGUITest" Background="Transparent">
     
     <Grid>
-        
+        <Border Height="100" Width="100" Background="Red"></Border>
     </Grid>
 </Page>

@@ -40,5 +40,10 @@ namespace datingAppByAJA
         {
             Main.Content = new Registrierung();
         }
+
+        private void BtnClickMUI(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new ModernGUITest();
+        }
     }
 }

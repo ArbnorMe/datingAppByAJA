@@ -1,20 +1,19 @@
 ﻿<Page x:Class="datingAppByAJA.ModernGUITest"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:datingAppByAJA"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      Height="450" Width="800"
       Title="ModernGUITest" Background="Transparent">
-    
+
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-
 
             <Border CornerRadius="10" Grid.RowSpan="2">
                 <Border.Background>
@@ -25,9 +24,8 @@
                 </Border.Background>
             </Border>
 
-
             <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="Modern Design"
+                <TextBlock Text="Verheieratet aber Geil"
                            FontWeight="Light"
                            FontFamily="helvetica"
                            FontSize="22"
@@ -35,28 +33,23 @@
                            HorizontalAlignment="Center"/>
             </StackPanel>
 
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <TextBox FontFamily="Helvetica"
+                         FontWeight="Light"
+                         Text="Username"
+                         FontSize="20"
+                         HorizontalAlignment="Center"
+                         Foreground="White"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         Width="235"
+                         HorizontalContentAlignment="Left"
+                         Opacity="0.5"/>
 
-          
-            <StackPanel Grid.Row="1" >
-                <StackPanel Orientation="Horizontal">
-                    <TextBox FontFamily="Helvetica"
-                             FontWeight="Light"
-                             Text="Username"
-                             FontSize="20"
-                             HorizontalAlignment="Center"
-                             Foreground="White"
-                             Background="Transparent"
-                             BorderThickness="0"
-                             Width="235"
-                             HorizontalContentAlignment="Left"
-                             Opacity="0.5"
-                             Height="25"
-                            
-                    <iconPacks:PackIconMaterial Kind="Account" 
-                                                VerticalAlignment="Center" 
-                                                HorizontalAlignment="Center" 
-                                                Foreground="White"/>
-                </StackPanel>
+            </StackPanel>
+            <iconPacks:PackIconMaterial Kind="Account"
+                                 VerticalAlignment="Top"
+                                 HorizontalAlignment="Center" Margin="0,39,0,0" Grid.Row="1"/>
         </Grid>
     </Grid>
 </Page>

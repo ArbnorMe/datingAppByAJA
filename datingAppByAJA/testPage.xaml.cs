@@ -85,9 +85,24 @@ namespace datingAppByAJA
             }
         }
 
-        private void testButton_Click(object sender, RoutedEventArgs e)
+        private void accDeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Test\"");
+            string eingabe = kontoLoeschungText.Text;
+            var con =
+                new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
+            string query = $"DELETE FROM `datingApp`.`userTable` WHERE (`iduser` = '{eingabe}')";
+            MessageBox.Show("Daten gelöscht");
+            var command = new MySqlCommand(query, con);
+            try
+            {
+                con.Open();
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

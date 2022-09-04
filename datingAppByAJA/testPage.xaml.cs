@@ -53,17 +53,33 @@ namespace datingAppByAJA
 
         private void abfragenBtn_Click(object sender, RoutedEventArgs e)
         {
-            string suchen = suchEingabe.Text;
-            var con =
-                new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
-            MySqlCommand cmd = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE password LIKE \"{suchen}\"");
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            var connection = new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
+            try
             {
-                // Du kannst Werte aus Spaltennamen abrufen
-                Console.WriteLine(reader["email"].ToString());
-                //Oder gebe den Wert aus der columnID zurück, in diesem Fall 0
-                Console.WriteLine(reader.GetInt32(0));
+                connection.Open();
+
+                var command = new MySqlCommand("SELECT * FROM userTable limit 3;", connection);
+                var reader = command.ExecuteReader();
+                lstbxAnzeige.Items.Add("iduser # password # email # geschlecht # firstname # lastname");
+                while (reader.Read())
+                {
+                    lstbxAnzeige.Items.Add(
+                        reader["iduser"] +  " # " +
+                        reader["password"] + " # " +
+                        reader["email"] + " # " +
+                        reader["geschlecht"] + " # " +
+                        reader["firstname"] + " # " +
+                        reader["lastname"] + " # "
+                        );
+                }
+
+                reader.Close();
+                connection.Close();
+            }
+
+            catch
+            {
+                MessageBox.Show("Error");
             }
         }
 

@@ -17,7 +17,7 @@
         <TextBox Name="suchEingabe" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="41" Margin="10,256,0,0"/>
         <Button Content="DB Abfragen" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="101" Margin="138,302,0,0" Click="abfragenBtn_Click"/>
         <Label Content="Suchen" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top"/>
-        <DataGrid HorizontalAlignment="Left" Height="430" Margin="245,0,0,0" VerticalAlignment="Center" Width="545"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="DEMO" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="DEMO" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="24" Height="43" Width="229"/>
+        <ListBox Name="lstbxAnzeige" Margin="244,58,10,10"/>
     </Grid>
 </Page>

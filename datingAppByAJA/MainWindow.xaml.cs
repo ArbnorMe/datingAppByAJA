@@ -56,5 +56,15 @@ namespace datingAppByAJA
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
+
+        private void Btn_Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Btn_Minimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 }

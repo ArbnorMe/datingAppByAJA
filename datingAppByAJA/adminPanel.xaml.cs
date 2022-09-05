@@ -89,18 +89,20 @@ namespace datingAppByAJA
             string eingabe = kontoLoeschungText.Text;
             var connection = new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
             string query = $"DELETE FROM `datingApp`.`userTable` WHERE (`iduser` = '{eingabe}')";
-            var commandSuche = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE email LIKE \"{eingabe}\"", connection);
+            var commandSuche = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE iduser LIKE \"{eingabe}\"", connection);
             
             var commandDelete = new MySqlCommand(query, connection);
             try
             {
                 connection.Open();
                 var reader = commandSuche.ExecuteReader();
-
+                
                 while (reader.Read())
                 {
-                    if (reader["iduser"] == eingabe)
+                    string i = reader["iduser"].ToString();
+                    if (i == eingabe)
                     {
+                        reader.Close();
                         commandDelete.ExecuteNonQuery();
                         MessageBox.Show("Daten wurden gelöscht!");
                     } 

@@ -24,9 +24,8 @@
             <Button Content="-" Margin="320,0,0,30" Width="20" Height="20" x:Name="Btn_Minimize" Click="Btn_Minimize_Click"/>
             <Button Content="X" Margin="10,0,0,30" Width="20" Height="20" x:Name="Btn_Close" Click="Btn_Close_Click"/>
         </StackPanel>
-        
+
         <Frame x:Name="Main" Margin="0,50,0,0" NavigationUIVisibility="Hidden"/>
-        <Image Margin="0,50,10,0" Source="/logo_verheiratetabergeil_de.png" HorizontalAlignment="Right" Width="112" Height="100" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

@@ -15,17 +15,10 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-           
 
-            <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="verheiratetabergeil.de"
-                           FontWeight="Light"
-                           FontFamily="helvetica"
-                           FontSize="22"
-                           Foreground="White"
-                           HorizontalAlignment="Center"/>
-            </StackPanel>
 
+            <StackPanel VerticalAlignment="Center"/>
+            <Image Margin="287,0,0,0" Source="/logo_verheiratetabergeil_de.png" HorizontalAlignment="Left" Width="244" Height="226" VerticalAlignment="Center"/>
             <StackPanel Grid.Row="1">
                 <StackPanel Orientation="Horizontal">
                     <TextBox FontFamily="Helvetica"

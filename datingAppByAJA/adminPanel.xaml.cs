@@ -30,7 +30,7 @@ namespace datingAppByAJA
 
         private void speicherBtn_Click(object sender, RoutedEventArgs e)
         {
-            string password = passwortEingabe.Text;
+            string password = passwortEingabe.Password.ToString();
             string email = emailEingabe.Text;
             var con =
                 new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
@@ -59,7 +59,7 @@ namespace datingAppByAJA
 
                 connection.Open();
 
-                var command = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE password LIKE \"{eingabe}\"", connection);
+                var command = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE email LIKE \"{eingabe}\"", connection);
                 var reader = command.ExecuteReader();
                 lstbxAnzeige.Items.Add("iduser # password # email # geschlecht # firstname # lastname");
                 while (reader.Read())
@@ -96,9 +96,10 @@ namespace datingAppByAJA
                 con.Open();
                 try
                 {
+                    MessageBox.Show("Daten werden gelöscht!");
                     command.ExecuteNonQuery();
                 }
-                catch
+                catch (Exception ex)
                 {
                     MessageBox.Show("Daten konnten nicht gelöscht werden.");
                 }

@@ -33,7 +33,6 @@ namespace datingAppByAJA
 
         private void BtnStartseite(object sender, RoutedEventArgs e)
         {
-            Main.Content = new testPage();
         }
 
         private void BtnRegistrieren(object sender, RoutedEventArgs e)

@@ -15,14 +15,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Border CornerRadius="10" Grid.RowSpan="2">
-                <Border.Background>
-                    <LinearGradientBrush>
-                        <GradientStop Color="#7813E9" Offset="0.0"/>
-                        <GradientStop Color="#E91348" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-            </Border>
+           
 
             <StackPanel VerticalAlignment="Center">
                 <TextBlock Text="verheiratetabergeil.de"

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:datingAppByAJA"
         mc:Ignorable="d"
-        Title="verheiratetabergeil.de" Height="527" MinHeight="450" Width="800" MinWidth="550"
+        Title="verheiratetabergeil.de" Height="527" MinHeight="450" Width="800" MinWidth="590"
         Background="Transparent" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip">
     <Grid x:Name="grid">
         <Border CornerRadius="10" Grid.RowSpan="2"  MouseDown="Windows_MouseDown">

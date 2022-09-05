@@ -6,10 +6,9 @@
         xmlns:local="clr-namespace:datingAppByAJA"
         mc:Ignorable="d"
         Title="verheiratetabergeil.de" Height="527" MinHeight="450" Width="800" MinWidth="550"
-        MouseDown="Window_MouseDown" 
-        Background="Transparent" AllowsTransparency="True" WindowStyle="None">
+        Background="Transparent" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip">
     <Grid x:Name="grid">
-        <Border CornerRadius="10" Grid.RowSpan="2">
+        <Border CornerRadius="10" Grid.RowSpan="2"  MouseDown="Windows_MouseDown">
             <Border.Background>
                 <LinearGradientBrush>
                     <GradientStop Color="#7813E9" Offset="0.0"/>

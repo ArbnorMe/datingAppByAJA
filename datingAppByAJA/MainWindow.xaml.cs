@@ -50,12 +50,11 @@ namespace datingAppByAJA
             Main.Content = new adminPanel();
         }
 
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+
+        private void Windows_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
-
-
     }
 }

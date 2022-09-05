@@ -45,5 +45,10 @@ namespace datingAppByAJA
         {
             Main.Content = new ModernGUITest();
         }
+
+        private void BtnClickAdminPanel(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new adminPanel();
+        }
     }
 }

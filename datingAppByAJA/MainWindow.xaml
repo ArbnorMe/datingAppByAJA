@@ -7,13 +7,14 @@
         mc:Ignorable="d"
         Title="verheiratetabergeil.de" Height="527" Width="800">
     <Grid x:Name="grid">
-        <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top">
+        <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top">
             <Button Content="Startseite" MinWidth="100" Click="BtnStartseite"></Button>
             <Button Content="Registrierung" MinWidth="100" Margin="10,0,0,0" Click="BtnRegistrieren"></Button>
             <Button Content="Moder UI" MinWidth="100" Margin="10,0,0,0" Click="BtnClickMUI"/>
+            <Button Content="Admin Panel" MinWidth="100" Margin="10,0,0,0" Click="BtnClickAdminPanel"/>
         </StackPanel>
         <Frame x:Name="Main" Margin="0,40,0,0" NavigationUIVisibility="Hidden"/>
         <Image Width="112" Height="100" Margin="685,0,0,0" Source="/logo_verheiratetabergeil_de.png" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            
+
     </Grid>
 </Window>

@@ -18,14 +18,14 @@
             <Border CornerRadius="10" Grid.RowSpan="2">
                 <Border.Background>
                     <LinearGradientBrush>
-                        <GradientStop Color="#7be9f6" Offset="0.0"/>
-                        <GradientStop Color="#f083da" Offset="1"/>
+                        <GradientStop Color="#7813E9" Offset="0.0"/>
+                        <GradientStop Color="#E91348" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
             </Border>
 
             <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="Verheieratet aber Geil"
+                <TextBlock Text="verheiratetabergeil.de"
                            FontWeight="Light"
                            FontFamily="helvetica"
                            FontSize="22"
@@ -38,13 +38,12 @@
                          FontWeight="Light"
                          Text="Username"
                          FontSize="20"
-                         HorizontalAlignment="Center"
                          Foreground="White"
                          Background="Transparent"
                          BorderThickness="0"
                          Width="235"
                          HorizontalContentAlignment="Left"
-                         Opacity="0.5"/>
+                         Opacity="0.5" Height="78"/>
 
             </StackPanel>
             <iconPacks:PackIconMaterial Kind="Account"

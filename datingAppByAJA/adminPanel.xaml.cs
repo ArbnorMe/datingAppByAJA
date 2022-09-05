@@ -59,7 +59,7 @@ namespace datingAppByAJA
 
                 connection.Open();
 
-                var command = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE password LIKE \"{eingabe}\"", connection);
+                var command = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE email LIKE \"{eingabe}\"", connection);
                 var reader = command.ExecuteReader();
                 lstbxAnzeige.Items.Add("iduser # password # email # geschlecht # firstname # lastname");
                 while (reader.Read())

@@ -87,23 +87,29 @@ namespace datingAppByAJA
         private void accDeleteBtn_Click(object sender, RoutedEventArgs e)
         {
             string eingabe = kontoLoeschungText.Text;
-            var con =
-                new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
+            var connection = new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
             string query = $"DELETE FROM `datingApp`.`userTable` WHERE (`iduser` = '{eingabe}')";
-            var command = new MySqlCommand(query, con);
+            var commandSuche = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE email LIKE \"{eingabe}\"", connection);
+            
+            var commandDelete = new MySqlCommand(query, connection);
             try
             {
-                con.Open();
-                try
+                connection.Open();
+                var reader = commandSuche.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    MessageBox.Show("Daten werden gelöscht!");
-                    command.ExecuteNonQuery();
+                    if (reader["iduser"] == eingabe)
+                    {
+                        commandDelete.ExecuteNonQuery();
+                        MessageBox.Show("Daten wurden gelöscht!");
+                    } 
+                    else
+                    {
+                        MessageBox.Show("Daten konten nicht gelöscht werden.");
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Daten konnten nicht gelöscht werden.");
-                }
-                con.Close();
+                connection.Close();
             }
             catch (Exception ex)
             {

@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="adminPanel">
 
-    <Grid x:Name="grid" Background="#FF828282">
+    <Grid x:Name="grid">
         <TextBox x:Name="emailEingabe" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="25" Margin="10,92,0,0"/>
         <Button Content="Speichern" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="101" Margin="10,183,0,0" Click="speicherBtn_Click"/>
         <Label Content="E-Mail" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top"/>
@@ -16,7 +16,7 @@
         <TextBox x:Name="suchEingabe" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="25" Margin="10,260,0,0"/>
         <Button Content="DB Abfragen" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="101" Margin="10,290,0,0" Click="abfragenBtn_Click"/>
         <Label Content="Suchen" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="DEMO" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="24" Height="43" Width="229"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="ADMIN PANEL" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="24" Height="43" Width="229"/>
         <ListBox x:Name="lstbxAnzeige" Margin="244,58,10,10"/>
         <TextBox x:Name="kontoLoeschungText" HorizontalAlignment="Left" Text="id hier eingeben" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" Height="25" Margin="10,367,0,0"/>
         <Button Content="Nutzen löschen" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="101" Margin="10,397,0,0" Click="accDeleteBtn_Click"/>

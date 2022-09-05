@@ -8,6 +8,14 @@
         Title="verheiratetabergeil.de" Height="527" MinHeight="450" Width="800" MinWidth="550"
         MouseDown="Window_MouseDown">
     <Grid x:Name="grid">
+        <Border CornerRadius="10" Grid.RowSpan="2">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#7813E9" Offset="0.0"/>
+                    <GradientStop Color="#E91348" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
         <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top">
             <Button Content="Startseite" MinWidth="100" Click="BtnStartseite"></Button>
             <Button Content="Registrierung" MinWidth="100" Margin="10,0,0,0" Click="BtnRegistrieren"></Button>

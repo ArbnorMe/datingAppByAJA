@@ -23,7 +23,7 @@
             <Button Content="Moder UI" MinWidth="100" Margin="10,0,0,0" Click="BtnClickMUI"/>
             <Button Content="Admin Panel" MinWidth="100" Margin="10,0,0,0" Click="BtnClickAdminPanel"/>
         </StackPanel>
-        <Frame x:Name="Main" Margin="0,40,0,0" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="Main" Margin="0,50,0,0" NavigationUIVisibility="Hidden"/>
         <Image Margin="0,0,3,0" Source="/logo_verheiratetabergeil_de.png" HorizontalAlignment="Right" Width="112" Height="100" VerticalAlignment="Top"/>
 
     </Grid>

@@ -31,11 +31,15 @@ namespace datingAppByAJA
             InitializeComponent();
         }
 
+        //private void MainFrame()
+        //{
+        //    Main. = new ModernGUITest();
+        //}
         private void BtnStartseite(object sender, RoutedEventArgs e)
         {
         }
 
-        public void BtnRegistrieren(object sender, RoutedEventArgs e)
+        private void BtnRegistrieren(object sender, RoutedEventArgs e)
         {
             Main.Content = new Registrierung();
         }

@@ -24,6 +24,11 @@ namespace datingAppByAJA
             InitializeComponent();
         }
 
+        private void TextBox1_Click(object sender, RoutedEventArgs e)
+        {
+            TextBox1.Clear();
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();

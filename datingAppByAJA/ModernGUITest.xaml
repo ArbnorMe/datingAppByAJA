@@ -17,11 +17,14 @@
 
 
 
-            <StackPanel VerticalAlignment="Center"/>
-            <Image Margin="287,0,0,0" Source="/logo_verheiratetabergeil_de.png" HorizontalAlignment="Left" Width="244" Height="226" VerticalAlignment="Center"/>
+            <StackPanel VerticalAlignment="Center">
+                <Image Source="/logo_verheiratetabergeil_de.png" Width="200"/>
+            </StackPanel>
+            
             <StackPanel Grid.Row="1">
                 <StackPanel Orientation="Horizontal">
                     <TextBox FontFamily="Helvetica"
+                         Name="TextBox1"
                          FontWeight="Light"
                          Text="Username"
                          FontSize="20"

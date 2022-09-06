@@ -22,5 +22,7 @@ namespace datingAppByAJA
         {
             InitializeComponent();
         }
+
+  
     }
 }

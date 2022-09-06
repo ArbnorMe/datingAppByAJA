@@ -66,7 +66,7 @@
 
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
                     <Button Width="100" Height="40" Content="LOGIN" Margin="270,0,60,0"/>
-                    <Button Width="100" Height="40" Content="REGISTER"/>
+                    <Button Width="100" Height="40" Content="REGISTER" x:Name="registrieren" Click="registrieren_Click"/>
                 </StackPanel>
             </StackPanel>
 

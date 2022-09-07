@@ -32,17 +32,16 @@ namespace datingAppByAJA
         {
             string password = passwortEingabe.Password.ToString();
             string email = emailEingabe.Text;
-            var con =
-                new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
+            var connection = new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
             string query = $"Insert into userTable(password, email)" +
                 $" values('{password}','{email}')";
             MessageBox.Show("Daten geschrieben");
-            var command = new MySqlCommand(query, con);
+            var command = new MySqlCommand(query, connection);
             try
             {
-                con.Open();
+                connection.Open();
                 command.ExecuteNonQuery();
-                con.Close();
+                connection.Close();
             }
             catch (Exception ex)
             {
@@ -87,35 +86,53 @@ namespace datingAppByAJA
         private void accDeleteBtn_Click(object sender, RoutedEventArgs e)
         {
             string eingabe = kontoLoeschungText.Text;
+            bool besteatigung = false;
             var connection = new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
-            string query = $"DELETE FROM `datingApp`.`userTable` WHERE (`iduser` = '{eingabe}')";
-            var commandSuche = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE iduser LIKE \"{eingabe}\"", connection);
-            
-            var commandDelete = new MySqlCommand(query, connection);
+            Console.WriteLine("TEST!");
             try
             {
                 connection.Open();
-                var reader = commandSuche.ExecuteReader();
-                
+
+                var command = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE iduser LIKE \"{eingabe}\"", connection);
+                var reader = command.ExecuteReader();
+
                 while (reader.Read())
                 {
-                    string i = reader["iduser"].ToString();
-                    if (i == eingabe)
+                    string iduserSV = Convert.ToString(reader["iduser"]);
+                    if (iduserSV == eingabe)
                     {
-                        reader.Close();
-                        commandDelete.ExecuteNonQuery();
-                        MessageBox.Show("Daten wurden gelöscht!");
-                    } 
+                        besteatigung = true;
+                        Console.WriteLine("FEHLER!");
+                    }
                     else
                     {
-                        MessageBox.Show("Daten konten nicht gelöscht werden.");
+                        besteatigung = false;
+                        MessageBox.Show("Es wurde nichts in der DB gefunden.");
                     }
                 }
+                reader.Close();
                 connection.Close();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Fehler");
+            }
+
+            if (besteatigung == true)
+            {
+                string mySqlBefehl = $"DELETE FROM `datingApp`.`userTable` WHERE (`iduser` = '{eingabe}')";
+                var command = new MySqlCommand(mySqlBefehl, connection);
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
         }
     }

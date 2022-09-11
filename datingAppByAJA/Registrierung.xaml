@@ -10,11 +10,11 @@
 
     <Grid x:Name="grid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="100*"></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
-            <RowDefinition Height="42"></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="100*"></RowDefinition>
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -23,13 +23,13 @@
             <ColumnDefinition Width="225*"></ColumnDefinition>
             <ColumnDefinition Width="70*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBox Name="emailEingabe" Text="" TextWrapping="Wrap" Grid.Row="1" Margin="275,9,0,9"/>
-        <TextBox Name="passwortEingabe" Text="" TextWrapping="Wrap" Grid.Row="2" Margin="275,0,0,0"/>
-        <TextBox x:Name="passwortEingabeWiederholen" Text="" TextWrapping="Wrap" Grid.Row="3" Background="White" Margin="275,9,0,9"/>
-        <Label Content="E-Mail" HorizontalAlignment="Right" Margin="0,0,330,0" VerticalAlignment="Center" Grid.Column="0" Height="26" Width="44" Grid.Row="1"/>
-        <Label Content="Passwort" HorizontalAlignment="Right" Margin="0,0,318,0" VerticalAlignment="Center" Grid.Column="0" Height="26" Width="56" Grid.Row="2"/>
-        <Label Content="Passwort wiederholen" HorizontalAlignment="Right" Margin="0,0,250,0" VerticalAlignment="Center" Grid.Column="0" Height="26" Width="124" Grid.Row="3"/>
-        <Button Content="Registrieren" Grid.Column="1" Click="Button_Click_1" Grid.Row="3" Margin="55,9,56,9"/>
-        <Button Content="Bug melden" Grid.Column="2" MinHeight="35" MinWidth="35" Grid.Row="4" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="35"/>
+        <TextBox Name="emailEingabe" Text="" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap"  Margin="0,9,0,9" HorizontalAlignment="Right" Width="230"/>
+        <TextBox Name="passwortEingabe" Text="" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Margin="0,9,0,9" HorizontalAlignment="Right" Width="230"/>
+        <TextBox x:Name="passwortEingabeWiederholen" Text="" Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" Margin="0,9,0,9" HorizontalAlignment="Right" Width="230"/>
+        <Label Content="E-Mail" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,330,0" Height="26" Width="44" Foreground="#FFF5EBEB"/>
+        <Label Content="Passwort" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,318,0" Height="26" Width="56" Foreground="#FFF5EBEB"/>
+        <Label Content="Passwort wiederholen" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,250,0" Height="26" Width="124" Foreground="#FFF5EBEB"/>
+        <Button Content="Registrieren" Grid.Row="3" Grid.Column="1" Margin="55,9,0,9" Click="Button_Click_1" HorizontalAlignment="Left" Width="114"/>
+        <Button Content="Bug melden" Grid.Row="4" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="35" Width="35" MinHeight="35" MinWidth="35"/>
     </Grid>
 </Page>

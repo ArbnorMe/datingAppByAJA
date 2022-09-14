@@ -37,6 +37,11 @@ namespace datingAppByAJA
                 window1.Main.Source = new Uri("Registrierung.xaml", UriKind.Relative);
             }
         }
+
+        private void TextBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
     }
 }
 

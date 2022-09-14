@@ -4,9 +4,11 @@
              xmlns:local="clr-namespace:datingAppByAJA"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="ModernButton.xaml"/>
+                <ResourceDictionary Source="PlaceholderTextbox.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -13,7 +13,7 @@
             <ColumnDefinition Width="110*"></ColumnDefinition>
             <ColumnDefinition Width="110*"></ColumnDefinition>
             <ColumnDefinition Width="110*"></ColumnDefinition>
-            <ColumnDefinition Width="360*"></ColumnDefinition>
+            <ColumnDefinition Width="370*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"></RowDefinition>

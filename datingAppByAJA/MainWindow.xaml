@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:datingAppByAJA"
         mc:Ignorable="d"
-        Title="verheiratetabergeil.de" Height="500" MinHeight="450" Width="800" MinWidth="590"
+        Title="verheiratetabergeil.de" Height="500" MinHeight="450" Width="800" MinWidth="500"
         Background="Transparent" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip">
     <Grid x:Name="grid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100*"></ColumnDefinition>
-            <ColumnDefinition Width="110*"></ColumnDefinition>
-            <ColumnDefinition Width="110*"></ColumnDefinition>
-            <ColumnDefinition Width="110*"></ColumnDefinition>
+            <ColumnDefinition Width="100*" MinWidth="100"></ColumnDefinition>
+            <ColumnDefinition Width="110*" MinWidth="110"></ColumnDefinition>
+            <ColumnDefinition Width="110*" MinWidth="110"></ColumnDefinition>
+            <ColumnDefinition Width="110*" MinWidth="110"></ColumnDefinition>
             <ColumnDefinition Width="370*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*" MinHeight="50"></RowDefinition>
             <RowDefinition Height="450*"></RowDefinition>
         </Grid.RowDefinitions>
         <Border CornerRadius="10" Grid.RowSpan="2" Grid.ColumnSpan="5" MouseDown="Windows_MouseDown">
@@ -27,14 +27,12 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="5" Orientation="Horizontal">
-            <Button Content="Startseite" MinWidth="100" Click="BtnStartseite" Grid.Row="0" Grid.Column="0"></Button>
-            <Button Content="Registrierung" MinWidth="100" Margin="10,0,0,0" Click="BtnRegistrieren"></Button>
-            <Button Content="Moder UI" MinWidth="100" Margin="10,0,0,0" Click="BtnClickMUI"/>
-            <Button Content="Admin Panel" MinWidth="100" Margin="10,0,0,0" Click="BtnClickAdminPanel"/>
-            <Button Content="-" Margin="320,0,0,30" Width="20" Height="20" x:Name="Btn_Minimize" Click="Btn_Minimize_Click"/>
-            <Button Content="X" Margin="10,0,0,30" Width="20" Height="20" x:Name="Btn_Close" Click="Btn_Close_Click" HorizontalAlignment="Right"/>
-        </StackPanel>
+        <Button Content="Startseite" MinWidth="100" Click="BtnStartseite" Grid.Row="0" Grid.Column="0"></Button>
+        <Button Content="Registrierung" MinWidth="100" Margin="10,0,0,0" Click="BtnRegistrieren" Grid.Column="1"></Button>
+        <Button Content="Moder UI" MinWidth="100" Margin="10,0,0,0" Click="BtnClickMUI" Grid.Column="2"/>
+        <Button Content="Admin Panel" MinWidth="100" Margin="10,0,0,0" Click="BtnClickAdminPanel" Grid.Column="3"/>
+        <Button Content="-" Margin="0,0,25,30" Width="20" Height="20" x:Name="Btn_Minimize" Click="Btn_Minimize_Click" Grid.Column="4" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <Button Content="X" Margin="0,0,0,30" Width="20" Height="20" x:Name="Btn_Close" Click="Btn_Close_Click" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="4"/>
 
         <Frame x:Name="Main" Grid.Row="1" Grid.ColumnSpan="5" NavigationUIVisibility="Hidden" Source="ModernGUITest.xaml"/>
 

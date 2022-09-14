@@ -12,20 +12,17 @@
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="225"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
 
+            <Image Source="/logo_verheiratetabergeil_de.png" Width="200" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
 
 
-            <StackPanel VerticalAlignment="Center">
-                <Image Source="/logo_verheiratetabergeil_de.png" Width="200"/>
-            </StackPanel>
-            
-            <StackPanel Grid.Row="1">
-                <StackPanel Orientation="Horizontal">
-                    <TextBox FontFamily="Helvetica"
-                         x:Name="TextBox1"
+            <TextBox FontFamily="Helvetica"
+                         Name="TextBox1"
                          FontWeight="Light"
                          Text="Username"
                          FontSize="20"
@@ -35,22 +32,19 @@
                          Width="215"
                          HorizontalContentAlignment="Left"
                          Opacity="0.5" Height="24"
-                         Margin="280,0,0,0"
-                         Style="{StaticResource WatermarkTextBox}"/>
+                         VerticalContentAlignment="Center"
+                         Grid.Row="1"/>
+            <iconPacks:PackIconMaterial Kind="Account"
+                                 VerticalAlignment="Center" Grid.Row="1" Height="25" RenderTransformOrigin="0.556,0.516" Margin="484,0,0,0"/>
 
-                    <iconPacks:PackIconMaterial Kind="Account"
-                                 VerticalAlignment="Top"
-                                 HorizontalAlignment="Center" Grid.Row="1" Height="25" RenderTransformOrigin="0.556,0.516"/>
-
-                </StackPanel>
-                <Border Width="235"
+            <Border Width="235"
                     Height="2"
                     Background="White"
-                    Opacity="0.5"/>
+                    Opacity="0.5"
+                    Grid.Row="1" Margin="282,66,282,44"/>
 
-                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                    <PasswordBox x:Name="PasswortSchrift" FontFamily="Helvetica"
-                         Style="{StaticResource WatermarkPasswordBox}"
+
+            <PasswordBox x:Name="PasswortSchrift" FontFamily="Helvetica"
                          FontWeight="Light"
                          Password="Password"
                          FontSize="20"
@@ -60,22 +54,19 @@
                          Width="215"
                          HorizontalContentAlignment="Left"
                          Opacity="0.5" Height="24"
-                         Margin="280,0,0,0"/>
-                    <iconPacks:PackIconMaterial Kind="Lock"
-                                 VerticalAlignment="Top"
-                                 HorizontalAlignment="Center" Grid.Row="1" Height="25" RenderTransformOrigin="0.556,0.516"/>
+                         Grid.Row="2"/>
+            <iconPacks:PackIconMaterial Kind="Lock"
+                                 VerticalAlignment="Center" Grid.Row="2" Height="25" RenderTransformOrigin="0.556,0.516" Margin="484,0,0,0"/>
 
-                </StackPanel>
-                <Border Width="235"
+            <Border Width="235"
                     Height="2"
                     Background="White"
-                    Opacity="0.5"/>
+                    Opacity="0.5"
+                    Grid.Row="2" Margin="282,66,282,44"/>
 
-                <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
-                    <Button Width="100" Height="40" Content="LOGIN" Margin="270,0,60,0"/>
-                    <Button Width="100" Height="40" Content="REGISTER" Click="Button_Click"/>
-                </StackPanel>
-            </StackPanel>
+            <Button Width="100" Height="40" Content="REGISTER" HorizontalAlignment="Left" Click="Button_Click" Grid.Row="3" Margin="275,0,0,0"/>
+            <Button Width="100" Height="40" Content="LOGIN" HorizontalAlignment="Right" Grid.Row="3" Margin="0,0,275,0"/>
+
 
 
 

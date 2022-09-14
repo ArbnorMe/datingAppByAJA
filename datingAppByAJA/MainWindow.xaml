@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:datingAppByAJA"
         mc:Ignorable="d"
-        Title="verheiratetabergeil.de" Height="527" MinHeight="450" Width="800" MinWidth="590"
+        Title="verheiratetabergeil.de" Height="500" MinHeight="450" Width="800" MinWidth="590"
         Background="Transparent" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip">
     <Grid x:Name="grid">
         <Grid.ColumnDefinitions>
@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"></RowDefinition>
-            <RowDefinition Height="477*"></RowDefinition>
+            <RowDefinition Height="450*"></RowDefinition>
         </Grid.RowDefinitions>
         <Border CornerRadius="10" Grid.RowSpan="2" Grid.ColumnSpan="5" MouseDown="Windows_MouseDown">
             <Border.Background>

@@ -25,7 +25,7 @@
 
             <Image Source="/logo_verheiratetabergeil_de.png" Width="200" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
 
-        <WrapPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center">
+        <WrapPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"  VerticalAlignment="Center">
             <Border BorderBrush="Black" BorderThickness="2" Padding="1">
                 <WrapPanel>
                 <TextBox FontFamily="Helvetica"
@@ -35,17 +35,17 @@
                          FontWeight="Light"
                          Text="Username"
                          BorderThickness="0"
-                         MinWidth="120"
+                         MinWidth="150"
                          FontSize="20"
                          Foreground="White"
                          Background="Transparent"
-                         Opacity="0.5" Height="24" MaxLength="27"/>
+                         Opacity="0.5" Height="24" MaxLength="22"/>
             <iconPacks:PackIconMaterial Kind="Account" Height="25" Margin="20,0,0,0" />
             </WrapPanel>
         </Border>
         </WrapPanel>
 
-        <WrapPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <WrapPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border BorderBrush="Black" BorderThickness="2" Padding="1">
                 <WrapPanel>
         <PasswordBox x:Name="PasswortPasswordBox"
@@ -55,11 +55,11 @@
                          FontWeight="Light"
                          Password="Password"
                          BorderThickness="0"
-                         MinWidth="120"
+                         MinWidth="150"
                          FontSize="20"
                          Foreground="White"
                          Background="Transparent"
-                         Opacity="0.5" Height="24" MaxLength="22"/>
+                         Opacity="0.5" Height="24" MaxLength="18"/>
             <iconPacks:PackIconMaterial Kind="Lock" Height="25" Margin="20,0,0,0" />
                 </WrapPanel>
             </Border>

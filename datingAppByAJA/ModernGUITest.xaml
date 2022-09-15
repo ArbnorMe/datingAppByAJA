@@ -71,7 +71,7 @@
                     Grid.Row="2" Margin="282,66,282,44" Grid.Column="1"/>
 
             <Button Width="100" Height="40"  Content="REGISTER" HorizontalAlignment="Left" Click="Button_Click" Grid.Row="3"  Grid.Column="1"/>
-            <Button Width="100" Height="40" Content="LOGIN" HorizontalAlignment="Right" Grid.Row="3"  Grid.Column="1"/>
+            <Button Width="100" Height="40" Content="LOGIN" HorizontalAlignment="Right" Grid.Row="3"  Grid.Column="1" Click="Button_Click_1"/>
 
 
 

@@ -22,6 +22,7 @@
         <Button Content="Nutzen löschen" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="101" Margin="10,397,0,0" Click="accDeleteBtn_Click"/>
         <Label Content="Konto löschen" HorizontalAlignment="Left" Margin="10,336,0,0" VerticalAlignment="Top"/>
         <PasswordBox Name="passwortEingabe" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top" Width="229" Height="25"/>
+        <Button Content="Test Button" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="101" Margin="138,397,0,0" Click="testBtn_Click"/>
 
     </Grid>
 </Page>

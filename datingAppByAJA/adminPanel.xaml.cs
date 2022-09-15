@@ -60,7 +60,7 @@ namespace datingAppByAJA
 
                 var command = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE email LIKE \"{eingabe}\"", connection);
                 var reader = command.ExecuteReader();
-                lstbxAnzeige.Items.Add("iduser # password # email # geschlecht # firstname # lastname");
+                lstbxAnzeige.Items.Add("iduser # password # email # geschlecht # firstname # lastname # adminRechte");
                 while (reader.Read())
                 {
                     lstbxAnzeige.Items.Add(
@@ -69,21 +69,20 @@ namespace datingAppByAJA
                         reader["email"] + " # " +
                         reader["geschlecht"] + " # " +
                         reader["firstname"] + " # " +
-                        reader["lastname"] + " # "
+                        reader["lastname"] + " # " +
+                        reader["adminRechte"] + " # "
                         );
                 }
-
                 reader.Close();
                 connection.Close();
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void accDeleteBtn_Click(object sender, RoutedEventArgs e)
+        public void accDeleteBtn_Click(object sender, RoutedEventArgs e)
         {
             string eingabe = kontoLoeschungText.Text;
             bool besteatigung = false;
@@ -135,7 +134,32 @@ namespace datingAppByAJA
                 {
                     MessageBox.Show("Der Nutzer konnte gelöscht werden");
                 }
+            }
+        }
 
+        private void testBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string eingabe = kontoLoeschungText.Text;
+            var connection = new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
+
+            try
+            {
+                connection.Open();
+                var command = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE iduser LIKE \"{eingabe}\"", connection);
+                var reader = command.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    MessageBox.Show(Convert.ToString(reader["iduser"]));
+                }
+
+                reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+                MessageBox.Show(ex.Message);
             }
         }
     }

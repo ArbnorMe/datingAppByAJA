@@ -30,10 +30,6 @@ namespace datingAppByAJA
             InitializeComponent();
         }
 
-        private void TextBox1_Click(object sender, RoutedEventArgs e)
-        {
-            UsernameTextBox.Clear();
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -63,6 +59,39 @@ namespace datingAppByAJA
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void PasswortPasswordBox_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (PasswortPasswordBox.Password == "Password")
+            {
+                PasswortPasswordBox.Clear();
+            }
+        }
+
+        private void PasswortPasswordBox_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (PasswortPasswordBox.Password == "")
+            {
+                PasswortPasswordBox.Password = "Password";
+            }
+        }
+
+        private void UsernameTextBox_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (UsernameTextBox.Text == "Username")
+            {
+                UsernameTextBox.Clear();
+            }
+        }
+
+        private void UsernameTextBox_MouseLeave(object sender, MouseEventArgs e)
+        {
+            
+            if (UsernameTextBox.Text == "") 
+            { UsernameTextBox.Text = "Username"; }
+
+
         }
     }
 }

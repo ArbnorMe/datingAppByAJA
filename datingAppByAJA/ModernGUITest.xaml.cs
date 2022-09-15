@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySqlConnector;
 
 namespace datingAppByAJA
 {
@@ -19,6 +20,11 @@ namespace datingAppByAJA
     /// </summary>
     public partial class ModernGUITest : Page
     {
+        string serverMySql = "datingapp.mysql.arbnor.me";
+        string userIdMySql = "root";
+        string passwordMySql = "frVnoGZ53KaBZ58L9428";
+        string databaseMySql = "datingApp";
+
         public ModernGUITest()
         {
             InitializeComponent();
@@ -26,7 +32,7 @@ namespace datingAppByAJA
 
         private void TextBox1_Click(object sender, RoutedEventArgs e)
         {
-            TextBox1.Clear();
+            UsernameTextBox.Clear();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -40,7 +46,23 @@ namespace datingAppByAJA
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            
+            string password = PasswortPasswordBox.Password.ToString();
+            string email = UsernameTextBox.Text;
+            var connection = new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
+            string query = $"Insert into userTable(password, email)" +
+                $" values('{password}','{email}')";
+            MessageBox.Show("Daten werden geschrieben");
+            var command = new MySqlCommand(query, connection);
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -27,7 +27,7 @@
 
 
             <TextBox FontFamily="Helvetica"
-                         Name="TextBox1"
+                         Name="UsernameTextBox"
                          FontWeight="Light"
                          Text="Username"
                          FontSize="20"
@@ -50,7 +50,7 @@
                     Grid.Row="1" Margin="282,66,282,44" Grid.Column="1"/>
 
 
-            <PasswordBox x:Name="PasswortSchrift" FontFamily="Helvetica"
+            <PasswordBox x:Name="PasswortPasswordBox" FontFamily="Helvetica"
                          FontWeight="Light"
                          Password="Password"
                          FontSize="20"

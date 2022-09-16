@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <None Remove="logo_verheiratetabergeil_de.png" />
+    <None Remove="pictures\Rick_Astley.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="pictures\Rick_Astley.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

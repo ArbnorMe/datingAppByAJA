@@ -17,7 +17,7 @@
         <Button Content="next" HorizontalAlignment="Left" Height="30" Width="30" Margin="262,242,0,0" VerticalAlignment="Top"/>
         <Button Content="back" HorizontalAlignment="Left" Margin="44,242,0,0" Height="30" Width="30" VerticalAlignment="Top"/>
         <StackPanel>
-        <Button Content="Favorisieren"  HorizontalAlignment="Left" x:Name="Favorisieren_Button" Margin="169,378,0,0" Height="30" Width="30" VerticalAlignment="Top" Click="Favorisieren_Button_Click"/>
+        <Button Content=""  HorizontalAlignment="Left" x:Name="Favorisieren_Button" Margin="169,378,0,0" Height="30" Width="30" VerticalAlignment="Top" Click="Favorisieren_Button_Click"/>
         <iconPacks:PackIconMaterial Kind="Heart" Height="25"/>
         </StackPanel>
 

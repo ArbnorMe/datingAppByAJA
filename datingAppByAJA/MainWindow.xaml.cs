@@ -37,6 +37,7 @@ namespace datingAppByAJA
         //}
         private void BtnStartseite(object sender, RoutedEventArgs e)
         {
+            Main.Content = new datingSeite();
         }
 
         private void BtnRegistrieren(object sender, RoutedEventArgs e)

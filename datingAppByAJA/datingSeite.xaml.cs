@@ -22,5 +22,10 @@ namespace datingAppByAJA
         {
             InitializeComponent();
         }
+
+        private void Favorisieren_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Favorisieren_Button.Background = new SolidColorBrush(Colors.Red);
+        }
     }
 }

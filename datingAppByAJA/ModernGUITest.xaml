@@ -12,23 +12,25 @@
 
     <Grid x:Name="grid">
         <Grid.RowDefinitions>
-                <RowDefinition Height="225"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="3*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300*"/>
-                <ColumnDefinition Width="400*"/>
-                <ColumnDefinition Width="300*"/>
-            </Grid.ColumnDefinitions>
+            <RowDefinition Height="225"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="240*"/>
+        </Grid.ColumnDefinitions>
 
-            <Image Source="/logo_verheiratetabergeil_de.png" Width="200" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
+        <Image Source="/logo_verheiratetabergeil_de.png" Width="200" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="60,0,60,0"/>
 
-        <WrapPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"  VerticalAlignment="Center">
+        <WrapPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"  VerticalAlignment="Center" Margin="64,0,0,0" HorizontalAlignment="Left" Width="192">
             <Border BorderBrush="Black" BorderThickness="2" Padding="1">
                 <WrapPanel>
-                <TextBox FontFamily="Helvetica"
+                    <TextBox FontFamily="Helvetica"
                       Name="UsernameTextBox"
                      MouseEnter="UsernameTextBox_MouseEnter"
                      MouseLeave="UsernameTextBox_MouseLeave"
@@ -40,15 +42,15 @@
                          Foreground="White"
                          Background="Transparent"
                          Opacity="0.5" Height="24" MaxLength="22"/>
-            <iconPacks:PackIconMaterial Kind="Account" Height="25" Margin="20,0,0,0" />
-            </WrapPanel>
-        </Border>
+                    <iconPacks:PackIconMaterial Kind="Account" Height="25" Margin="20,0,0,0" />
+                </WrapPanel>
+            </Border>
         </WrapPanel>
 
-        <WrapPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <WrapPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="64,0,0,0" HorizontalAlignment="Left" Width="192">
             <Border BorderBrush="Black" BorderThickness="2" Padding="1">
                 <WrapPanel>
-        <PasswordBox x:Name="PasswortPasswordBox"
+                    <PasswordBox x:Name="PasswortPasswordBox"
                          FontFamily="Helvetica"
                          MouseEnter="PasswortPasswordBox_MouseEnter"
                          MouseLeave="PasswortPasswordBox_MouseLeave"
@@ -60,13 +62,13 @@
                          Foreground="White"
                          Background="Transparent"
                          Opacity="0.5" Height="24" MaxLength="18"/>
-            <iconPacks:PackIconMaterial Kind="Lock" Height="25" Margin="20,0,0,0" />
+                    <iconPacks:PackIconMaterial Kind="Lock" Height="25" Margin="20,0,0,0" />
                 </WrapPanel>
             </Border>
         </WrapPanel>
 
-        <Button Width="100" Height="40"  Content="REGISTER" HorizontalAlignment="Left" Click="Button_Click" Grid.Row="3"  Grid.Column="1"/>
-        <Button Width="100" Height="40" Content="LOGIN" HorizontalAlignment="Right" Grid.Row="3"  Grid.Column="1" Click="Button_Click_1"/>
+        <Button Width="100" MinWidth="100" Height="40" MinHeight="40" Content="REGISTER" Click="Button_Click" Grid.Row="3"  Grid.Column="1"/>
+        <Button Width="100" MinWidth="100" Height="40" MinHeight="40" Content="LOGIN" Grid.Row="3"  Grid.Column="3" Click="Button_Click_1"/>
 
     </Grid>
 </Page>

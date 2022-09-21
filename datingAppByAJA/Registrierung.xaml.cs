@@ -26,8 +26,9 @@ namespace datingAppByAJA
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string password = passwortEingabe.Text;
+            string password = passwortEingabe.Password;
             string email = emailEingabe.Text;
+            string passwordwdh = passwortEingabeWiederholen.Password;
             MessageBox.Show("Es wird jetzt zum Server verbunden");
             var con =
                 new MySqlConnection("server=datingapp.mysql.arbnor.me;user id=root;password=frVnoGZ53KaBZ58L9428;database=datingApp");

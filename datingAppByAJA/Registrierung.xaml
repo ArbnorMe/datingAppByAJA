@@ -24,8 +24,8 @@
             <ColumnDefinition Width="70*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBox Name="emailEingabe" Text="" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap"  Margin="0,9,0,9" HorizontalAlignment="Right" Width="230"/>
-        <TextBox Name="passwortEingabe" Text="" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Margin="0,9,0,9" HorizontalAlignment="Right" Width="230"/>
-        <TextBox x:Name="passwortEingabeWiederholen" Text="" Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" Margin="0,9,0,9" HorizontalAlignment="Right" Width="230"/>
+        <PasswordBox Name="passwortEingabe"  Grid.Row="2" Grid.Column="0"  Margin="0,9,0,9" HorizontalAlignment="Right" Width="230"/>
+        <PasswordBox x:Name="passwortEingabeWiederholen"  Grid.Row="3" Grid.Column="0"  Margin="0,9,0,9" HorizontalAlignment="Right" Width="230"/>
         <Label Content="E-Mail" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,330,0" Height="26" Width="44" Foreground="#FFF5EBEB"/>
         <Label Content="Passwort" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,318,0" Height="26" Width="56" Foreground="#FFF5EBEB"/>
         <Label Content="Passwort wiederholen" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,250,0" Height="26" Width="124" Foreground="#FFF5EBEB"/>

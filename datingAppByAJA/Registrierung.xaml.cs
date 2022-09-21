@@ -33,7 +33,7 @@ namespace datingAppByAJA
             var con =
                 new MySqlConnection("server=datingapp.mysql.arbnor.me;user id=root;password=frVnoGZ53KaBZ58L9428;database=datingApp");
 
-            if (passwortEingabe.Password == passwortEingabeWiederholen.Password)
+            if (password == passwordwdh)
             {
                 string query = $"Insert into userTable(password, email)" +
                 $" values('{password}','{email}')";

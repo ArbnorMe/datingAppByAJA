@@ -33,20 +33,27 @@ namespace datingAppByAJA
             var con =
                 new MySqlConnection("server=datingapp.mysql.arbnor.me;user id=root;password=frVnoGZ53KaBZ58L9428;database=datingApp");
 
-            string query = $"Insert into userTable(password, email)" +
+            if (passwortEingabe == passwortEingabeWiederholen)
+            {
+                string query = $"Insert into userTable(password, email)" +
                 $" values('{password}','{email}')";
-            MessageBox.Show("Daten geschrieben");
-            var command = new MySqlCommand(query, con);
+                MessageBox.Show("Daten geschrieben");
+                var command = new MySqlCommand(query, con);
 
-            try
-            {
-                con.Open();
-                command.ExecuteNonQuery();
-                con.Close();
+                try
+                {
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Passwörter sind nicht identisch");
             }
         }
     }

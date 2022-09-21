@@ -37,7 +37,8 @@ namespace datingAppByAJA
         //}
         private void BtnStartseite(object sender, RoutedEventArgs e)
         {
-            Main.Content = new datingSeite();
+            //Main.Content = new datingSeite();
+            //Farben.Background = new LinearGradientBrush(Colors.LightBlue, Colors.SlateBlue, 90);
         }
 
         private void BtnRegistrieren(object sender, RoutedEventArgs e)

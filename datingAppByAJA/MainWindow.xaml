@@ -19,11 +19,11 @@
             <RowDefinition Height="50*" MinHeight="50"></RowDefinition>
             <RowDefinition Height="450*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Border CornerRadius="10" Grid.RowSpan="2" Grid.ColumnSpan="5" MouseDown="Windows_MouseDown">
+        <Border CornerRadius="10" x:Name="Farben" Grid.RowSpan="2" Grid.ColumnSpan="5" MouseDown="Windows_MouseDown">
             <Border.Background>
                 <LinearGradientBrush>
-                    <GradientStop Color="#7813E9" Offset="0.0"/>
-                    <GradientStop Color="#E91348" Offset="1"/>
+                    <GradientStop Color="#add8e6" Offset="0.1"/>
+                    <GradientStop Color="#6a5acd" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
         </Border>

@@ -67,8 +67,8 @@
             </Border>
         </WrapPanel>
 
-        <Button Width="100" MinWidth="100" Height="40" MinHeight="40" Content="REGISTER" Click="Button_Click" Grid.Row="3"  Grid.Column="1"/>
-        <Button Width="100" MinWidth="100" Height="40" MinHeight="40" Content="LOGIN" Grid.Row="3"  Grid.Column="3" Click="Button_Click_1"/>
+        <Button Width="100" MinWidth="100" Height="40" MinHeight="40" Content="REGISTER" Click="Register_Click" Grid.Row="3"  Grid.Column="1"/>
+        <Button Width="100" MinWidth="100" Height="40" MinHeight="40" Content="LOGIN" Grid.Row="3"  Grid.Column="3" Click="Login_Click_1"/>
 
     </Grid>
 </Page>

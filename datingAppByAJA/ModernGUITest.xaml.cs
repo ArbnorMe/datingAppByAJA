@@ -31,7 +31,7 @@ namespace datingAppByAJA
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Register_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
             if (window1 != null)
@@ -40,7 +40,7 @@ namespace datingAppByAJA
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Login_Click_1(object sender, RoutedEventArgs e)
         {
             string password = PasswortPasswordBox.Password.ToString();
             string email = UsernameTextBox.Text;

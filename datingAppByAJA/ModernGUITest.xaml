@@ -27,8 +27,8 @@
 
         <Image Source="/logo_verheiratetabergeil_de.png" Width="200" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="60,0,60,0"/>
 
-        <WrapPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"  VerticalAlignment="Center" Margin="64,0,0,0" HorizontalAlignment="Left" Width="192">
-            <Border BorderBrush="Black" BorderThickness="2" Padding="1">
+        <WrapPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"  VerticalAlignment="Center" Margin="58,0,58,0">
+            <Border BorderBrush="Black" BorderThickness="2" Padding="1" Width="192">
                 <WrapPanel>
                     <TextBox FontFamily="Helvetica"
                       Name="UsernameTextBox"

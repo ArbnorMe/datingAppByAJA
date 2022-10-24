@@ -20,7 +20,7 @@ namespace datingAppByAJA
     /// </summary>
     public partial class ModernGUITest : Page
     {
-        string serverMySql = "datingapp.mysql.arbnor.me";
+        string serverMySql = "datingapp-mysql.arbnor.me";
         string userIdMySql = "root";
         string passwordMySql = "frVnoGZ53KaBZ58L9428";
         string databaseMySql = "datingApp";

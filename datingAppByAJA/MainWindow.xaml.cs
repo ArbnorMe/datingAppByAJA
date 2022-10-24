@@ -22,7 +22,7 @@ namespace datingAppByAJA
     /// Made by Anton, Joshua and Arbnor
     public partial class MainWindow : Window
     {
-        string serverMySql = "datingapp.mysql.arbnor.me";
+        string serverMySql = "datingapp-mysql.arbnor.me";
         string userIdMySql = "root";
         string passwordMySql = "frVnoGZ53KaBZ58L9428";
         string databaseMySql = "datingApp";

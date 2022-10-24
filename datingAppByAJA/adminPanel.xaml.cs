@@ -19,10 +19,10 @@ namespace datingAppByAJA
     /// </summary>
     public partial class adminPanel : Page
     {
-        string serverMySql = "datingapp.mysql.arbnor.me";
+        string serverMySql = "datingapp-mysql.arbnor.me";
         string userIdMySql = "root";
-        string passwordMySql = "frVnoGZ53KaBZ58L9428";
-        string databaseMySql = "datingApp";
+        string passwordMySql = "r3a3ri6UzQxyvgx9mCn3UEkm7";
+        string databaseMySql = "datingapp_db";
         public adminPanel()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace datingAppByAJA
             string password = passwortEingabe.Password.ToString();
             string email = emailEingabe.Text;
             var connection = new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
-            string query = $"Insert into userTable(password, email)" +
+            string query = $"Insert into datingapp_table(password, email)" +
                 $" values('{password}','{email}')";
             MessageBox.Show("Daten geschrieben");
             var command = new MySqlCommand(query, connection);
@@ -58,7 +58,7 @@ namespace datingAppByAJA
 
                 connection.Open();
 
-                var command = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE email LIKE \"{eingabe}\"", connection);
+                var command = new MySqlCommand($"SELECT * FROM datingapp_table WHERE email LIKE \"{eingabe}\"", connection);
                 var reader = command.ExecuteReader();
                 lstbxAnzeige.Items.Add("iduser # password # email # geschlecht # firstname # lastname # adminRechte");
                 while (reader.Read())
@@ -92,7 +92,7 @@ namespace datingAppByAJA
             {
                 connection.Open();
 
-                var command = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE iduser LIKE \"{eingabe}\"", connection);
+                var command = new MySqlCommand($"SELECT * FROM datingapp_table WHERE iduser LIKE \"{eingabe}\"", connection);
                 var reader = command.ExecuteReader();
 
                 while (reader.Read())
@@ -118,7 +118,7 @@ namespace datingAppByAJA
 
             if (besteatigung == true)
             {
-                string mySqlBefehl = $"DELETE FROM `datingApp`.`userTable` WHERE (`iduser` = '{eingabe}')";
+                string mySqlBefehl = $"DELETE FROM `datingapp_table` WHERE (`iduser` = '{eingabe}')";
                 var command = new MySqlCommand(mySqlBefehl, connection);
                 try
                 {
@@ -145,7 +145,7 @@ namespace datingAppByAJA
             try
             {
                 connection.Open();
-                var command = new MySqlCommand($"SELECT * FROM datingApp.userTable WHERE iduser LIKE \"{eingabe}\"", connection);
+                var command = new MySqlCommand($"SELECT * datingapp_table WHERE iduser LIKE \"{eingabe}\"", connection);
                 var reader = command.ExecuteReader();
 
                 while(reader.Read())

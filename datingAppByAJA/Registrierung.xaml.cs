@@ -31,7 +31,7 @@ namespace datingAppByAJA
             string passwordwdh = passwortEingabeWiederholen.Password;
             MessageBox.Show("Es wird jetzt zum Server verbunden");
             var con =
-                new MySqlConnection("server=datingapp.mysql.arbnor.me;user id=root;password=frVnoGZ53KaBZ58L9428;database=datingApp");
+                new MySqlConnection("server=datingapp-mysql.arbnor.me;user id=root;password=frVnoGZ53KaBZ58L9428;database=datingApp");
 
             if (password == passwordwdh)
             {

@@ -19,10 +19,10 @@ namespace datingAppByAJA
     /// </summary>
     public partial class adminPanel : Page
     {
-        string serverMySql = "datingapp-mysql.arbnor.me";
-        string userIdMySql = "root";
-        string passwordMySql = "r3a3ri6UzQxyvgx9mCn3UEkm7";
-        string databaseMySql = "datingapp_db";
+        //string serverMySql = "datingapp-mysql.arbnor.me";
+        //string userIdMySql = "root";
+        //string passwordMySql = "r3a3ri6UzQxyvgx9mCn3UEkm7";
+        //string databaseMySql = "datingapp_db";
         public adminPanel()
         {
             InitializeComponent();
@@ -30,9 +30,10 @@ namespace datingAppByAJA
 
         private void speicherBtn_Click(object sender, RoutedEventArgs e)
         {
+
             string password = passwortEingabe.Password.ToString();
             string email = emailEingabe.Text;
-            var connection = new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
+            var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
             
 
             // Überprüft ob die adminCheckbox angeklickt ist
@@ -80,7 +81,7 @@ namespace datingAppByAJA
 
         private void abfragenBtn_Click(object sender, RoutedEventArgs e)
         {
-            var connection = new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
+            var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
             try
             {
                 string eingabe = suchEingabe.Text;
@@ -115,7 +116,7 @@ namespace datingAppByAJA
         {
             string eingabe = kontoLoeschungText.Text;
             bool besteatigung = false;
-            var connection = new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
+            var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
             Console.WriteLine("TEST!");
             try
             {
@@ -169,7 +170,7 @@ namespace datingAppByAJA
         private void testBtn_Click(object sender, RoutedEventArgs e)
         {
             string eingabe = kontoLoeschungText.Text;
-            var connection = new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
+            var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
 
             try
             {

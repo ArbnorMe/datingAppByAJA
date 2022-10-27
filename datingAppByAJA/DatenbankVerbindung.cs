@@ -4,11 +4,12 @@ using System.Text;
 
 namespace datingAppByAJA
 {
-    public class DatenbankVerbindung
+    public static class DBVerbindung 
     {
-        string serverMySql = "datingapp-mysql.arbnor.me";
-        string userIdMySql = "root";
-        string passwordMySql = "r3a3ri6UzQxyvgx9mCn3UEkm7";
-        string databaseMySql = "datingapp_db";
+        public static string serverMySql = "datingapp-mysql.arbnor.me";
+        public static string userIdMySql = "root";
+        public static string passwordMySql = "r3a3ri6UzQxyvgx9mCn3UEkm7";
+        public static string databaseMySql = "datingapp_db";
+
     }
 }

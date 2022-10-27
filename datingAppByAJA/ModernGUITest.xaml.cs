@@ -20,17 +20,6 @@ namespace datingAppByAJA
     /// </summary>
     public partial class ModernGUITest : Page
     {
-        string serverMySql = "datingapp-mysql.arbnor.me";
-        string userIdMySql = "root";
-        string passwordMySql = "frVnoGZ53KaBZ58L9428";
-        string databaseMySql = "datingApp";
-
-        public ModernGUITest()
-        {
-            InitializeComponent();
-        }
-
-
         private void Register_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
@@ -45,14 +34,15 @@ namespace datingAppByAJA
             string password = PasswortPasswordBox.Password.ToString();
             string email = UsernameTextBox.Text;
             var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
-            string query = $"Insert into datingapp_table(password, email)" +
-                $" values('{password}','{email}')";
-            MessageBox.Show("Daten werden geschrieben");
-            var command = new MySqlCommand(query, connection);
+            var abfrage = $""
+            //string query = $"Insert into {DBVerbindung.tableName}(password, email)" +
+            //    $" values('{password}','{email}')";
+            //MessageBox.Show("Daten werden geschrieben");
+            //var command = new MySqlCommand(query, connection);
             try
             {
                 connection.Open();
-                command.ExecuteNonQuery();
+                abfrage.ExecuteNonQuery();
                 connection.Close();
 
                 MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();

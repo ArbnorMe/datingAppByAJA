@@ -10,6 +10,7 @@ namespace datingAppByAJA
         public static string userIdMySql = "root";
         public static string passwordMySql = "r3a3ri6UzQxyvgx9mCn3UEkm7";
         public static string databaseMySql = "datingapp_db";
+        public static string tableName = "datingapp_table";
 
     }
 }

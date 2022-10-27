@@ -37,7 +37,7 @@ namespace datingAppByAJA
 
             if (password == passwordwdh)
             {
-                string query = $"Insert into datingapp_table(password, email)" +
+                string query = $"Insert into {DBVerbindung.tableName}(password, email)" +
                 $" values('{password}','{email}')";
                 MessageBox.Show("Daten geschrieben");
                 var command = new MySqlCommand(query, con);

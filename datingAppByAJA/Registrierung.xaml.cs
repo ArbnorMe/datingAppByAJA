@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MySqlConnector;
+using System.Linq;
 
 namespace datingAppByAJA
 {
@@ -46,6 +47,12 @@ namespace datingAppByAJA
                     con.Open();
                     command.ExecuteNonQuery();
                     con.Close();
+
+                    MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+                    if (window1 != null)
+                    {
+                        window1.Main.Source = new Uri("ModernGUITest.xaml", UriKind.Relative);
+                    }
                 }
                 catch (Exception ex)
                 {

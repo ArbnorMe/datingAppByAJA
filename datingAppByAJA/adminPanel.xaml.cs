@@ -33,20 +33,49 @@ namespace datingAppByAJA
             string password = passwortEingabe.Password.ToString();
             string email = emailEingabe.Text;
             var connection = new MySqlConnection($"server={serverMySql};user id={userIdMySql};password={passwordMySql};database={databaseMySql}");
-            string query = $"Insert into datingapp_table(password, email)" +
-                $" values('{password}','{email}')";
+            
+
+            // Überprüft ob die adminCheckbox angeklickt ist
+            if (adminCheckbox.IsChecked == true)
+            {
+                // Nutzer mit Admin Rechte wird erstellt
+                string sendenMitAdminRechte = $"Insert into datingapp_table(password, email, adminRechte)" + $" values('{password}','{email}', 1)";
+
+                var command = new MySqlCommand(sendenMitAdminRechte, connection);
+                try
+                {
+                    // SQL Befehl wird ausgeführt
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    // Fehler Ausgabe
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                // Nutzer ohne Admin Rechte wird erstellt
+                string senden = $"Insert into datingapp_table(password, email)" + $" values('{password}','{email}')";
+
+                var command = new MySqlCommand(senden, connection);
+                try
+                {
+                    // SQL Befehl wird ausgeführt
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    // Fehler Ausgabe
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
             MessageBox.Show("Daten geschrieben");
-            var command = new MySqlCommand(query, connection);
-            try
-            {
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void abfragenBtn_Click(object sender, RoutedEventArgs e)

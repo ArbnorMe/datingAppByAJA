@@ -32,11 +32,11 @@ namespace datingAppByAJA
             string passwordwdh = passwortEingabeWiederholen.Password;
             MessageBox.Show("Es wird jetzt zum Server verbunden");
             var con =
-                new MySqlConnection("server=datingapp-mysql.arbnor.me;user id=root;password=frVnoGZ53KaBZ58L9428;database=datingApp");
+                new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
 
             if (password == passwordwdh)
             {
-                string query = $"Insert into userTable(password, email)" +
+                string query = $"Insert into datingapp_table(password, email)" +
                 $" values('{password}','{email}')";
                 MessageBox.Show("Daten geschrieben");
                 var command = new MySqlCommand(query, con);

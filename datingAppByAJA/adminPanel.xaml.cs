@@ -36,7 +36,7 @@ namespace datingAppByAJA
             if (adminCheckbox.IsChecked == true)
             {
                 // Nutzer mit Admin Rechte wird erstellt
-                string sendenMitAdminRechte = $"Insert into {DBVerbindung.tableName}(password, email, adminRechte)" + $" values('{password}','{email}', 1)";
+                string sendenMitAdminRechte = $"Insert into {DBVerbindung.userTable}(password, email, adminRechte)" + $" values('{password}','{email}', 1)";
 
                 var command = new MySqlCommand(sendenMitAdminRechte, connection);
                 try
@@ -55,7 +55,7 @@ namespace datingAppByAJA
             else
             {
                 // Nutzer ohne Admin Rechte wird erstellt
-                string senden = $"Insert into {DBVerbindung.tableName}(password, email)" + $" values('{password}','{email}')";
+                string senden = $"Insert into {DBVerbindung.userTable}(password, email)" + $" values('{password}','{email}')";
 
                 var command = new MySqlCommand(senden, connection);
                 try
@@ -84,7 +84,7 @@ namespace datingAppByAJA
 
                 connection.Open();
 
-                var command = new MySqlCommand($"SELECT * FROM {DBVerbindung.tableName} WHERE email LIKE \"{eingabe}\"", connection);
+                var command = new MySqlCommand($"SELECT * FROM {DBVerbindung.userTable} WHERE email LIKE \"{eingabe}\"", connection);
                 var reader = command.ExecuteReader();
                 lstbxAnzeige.Items.Add("iduser # password # email # geschlecht # firstname # lastname # adminRechte");
                 while (reader.Read())
@@ -118,7 +118,7 @@ namespace datingAppByAJA
             {
                 connection.Open();
 
-                var command = new MySqlCommand($"SELECT * FROM {DBVerbindung.tableName} WHERE iduser LIKE \"{eingabe}\"", connection);
+                var command = new MySqlCommand($"SELECT * FROM {DBVerbindung.userTable} WHERE iduser LIKE \"{eingabe}\"", connection);
                 var reader = command.ExecuteReader();
 
                 while (reader.Read())
@@ -144,7 +144,7 @@ namespace datingAppByAJA
 
             if (besteatigung == true)
             {
-                string mySqlBefehl = $"DELETE FROM `{DBVerbindung.tableName}` WHERE (`iduser` = '{eingabe}')";
+                string mySqlBefehl = $"DELETE FROM `{DBVerbindung.userTable}` WHERE (`iduser` = '{eingabe}')";
                 var command = new MySqlCommand(mySqlBefehl, connection);
                 try
                 {
@@ -171,7 +171,7 @@ namespace datingAppByAJA
             try
             {
                 connection.Open();
-                var command = new MySqlCommand($"SELECT * {DBVerbindung.tableName} WHERE iduser LIKE \"{eingabe}\"", connection);
+                var command = new MySqlCommand($"SELECT * {DBVerbindung.userTable} WHERE iduser LIKE \"{eingabe}\"", connection);
                 var reader = command.ExecuteReader();
 
                 while(reader.Read())

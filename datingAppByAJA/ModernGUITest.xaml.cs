@@ -34,15 +34,15 @@ namespace datingAppByAJA
             string password = PasswortPasswordBox.Password.ToString();
             string email = UsernameTextBox.Text;
             var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
-            var abfrage = $""
-            //string query = $"Insert into {DBVerbindung.tableName}(password, email)" +
+            var query = $"INSERT";
+            //string query = $"Insert into {DBVerbindung.userTable}(password, email)" +
             //    $" values('{password}','{email}')";
             //MessageBox.Show("Daten werden geschrieben");
             //var command = new MySqlCommand(query, connection);
             try
             {
                 connection.Open();
-                abfrage.ExecuteNonQuery();
+                query.ExecuteNonQuery();
                 connection.Close();
 
                 MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();

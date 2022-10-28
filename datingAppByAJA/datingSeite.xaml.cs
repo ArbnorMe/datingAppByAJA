@@ -10,6 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySqlConnector;
+using System.IO;
+using Microsoft.Win32;
 
 namespace datingAppByAJA
 {
@@ -18,6 +21,7 @@ namespace datingAppByAJA
     /// </summary>
     public partial class datingSeite : Page
     {
+        BitmapImage bi = null;
         public datingSeite()
         {
             InitializeComponent();
@@ -27,5 +31,53 @@ namespace datingAppByAJA
         {
             Favorisieren_Button.Background = new SolidColorBrush(Colors.Red);
         }
+
+        private void Btn_Upload_Click(object sender, RoutedEventArgs e)
+        {
+
+            var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.userTable};database{DBVerbindung.userpicturesTable}");
+
+                using (MySqlCommand cmd = new MySqlCommand($"INSERT INTO '{DBVerbindung.userpicturesTable}'(myimage) VALUES (@IM)", connection))
+                {
+                OpenFileDialog open = new OpenFileDialog();
+                open.Title = "Open Picture";
+                open.Multiselect = false;
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+
+                if (open.ShowDialog() == true)
+                {
+                    try
+                    {
+                        bi = new BitmapImage();
+                        bi.BeginInit();
+                        bi.UriSource = new Uri(open.FileName, UriKind.RelativeOrAbsolute);
+                        bi.EndInit();
+
+                        Pictures.Source = bi;
+                    }
+                    catch (System.Exception c) { Console.Write("Exception" + c); }
+                }
+            }
+            }
+
+        private void Btn_Save_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Title = "Save picture as ";
+            save.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (bi != null)
+            {
+                if (save.ShowDialog() == true)
+                {
+                    JpegBitmapEncoder jpg = new JpegBitmapEncoder();
+                    jpg.Frames.Add(BitmapFrame.Create(bi));
+                    using (Stream stm = File.Create(save.FileName))
+                    {
+                        jpg.Save(stm);
+                    }
+                }
+            }
+        }
     }
-}
+  }
+

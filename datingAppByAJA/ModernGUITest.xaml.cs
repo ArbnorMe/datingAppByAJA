@@ -20,6 +20,11 @@ namespace datingAppByAJA
     /// </summary>
     public partial class ModernGUITest : Page
     {
+        public ModernGUITest()
+        {
+            InitializeComponent();
+        }
+
         private void Register_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();

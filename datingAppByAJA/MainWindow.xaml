@@ -29,7 +29,7 @@
         </Border>
         <Button Content="Startseite" MinWidth="100" Click="BtnStartseite" Grid.Row="0" Grid.Column="0"></Button>
         <Button Content="Registrierung" MinWidth="100" Margin="10,0,0,0" Click="BtnRegistrieren" Grid.Column="1"></Button>
-        <Button Content="Moder UI" MinWidth="100" Margin="10,0,0,0" Click="BtnClickMUI" Grid.Column="2"/>
+        <Button Content="Login" MinWidth="100" Margin="10,0,0,0" Click="BtnClickMUI" Grid.Column="2"/>
         <Button Content="Admin Panel" MinWidth="100" Margin="10,0,0,0" Click="BtnClickAdminPanel" Grid.Column="3"/>
         <Button Content="-" Margin="0,0,25,30" Width="20" Height="20" x:Name="Btn_Minimize" Click="Btn_Minimize_Click" Grid.Column="4" VerticalAlignment="Top" HorizontalAlignment="Right"/>
         <Button Content="X" Margin="0,0,0,30" Width="20" Height="20" x:Name="Btn_Close" Click="Btn_Close_Click" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="4"/>

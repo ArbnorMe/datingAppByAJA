@@ -53,10 +53,11 @@ namespace datingAppByAJA
                         bi.UriSource = new Uri(open.FileName, UriKind.RelativeOrAbsolute);
                         bi.EndInit();
 
-                        Pictures.Source = bi;
+                        //Pictures.Source = bi;
                     }
                     catch (System.Exception c) { Console.Write("Exception" + c); }
                 }
+                
             }
             }
 

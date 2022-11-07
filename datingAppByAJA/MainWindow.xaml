@@ -29,27 +29,27 @@
         </Border>
         <Button MinWidth="100" Click="BtnStartseite" Grid.Row="0" Grid.Column="0" Margin="5,5,0,0">
             <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
-                <TextBlock Margin="10,0,10,0" FontWeight="Normal">Hello World</TextBlock>
+                <TextBlock Margin="10,0,10,0" FontWeight="Bold">Hello World</TextBlock>
             </Viewbox>
         </Button>
         <Button Margin="10,5,0,0" Click="BtnRegistrieren" Grid.Column="1">
             <Viewbox>
-                <TextBlock Margin="10,0,10,0" FontWeight="Normal">Registrierung</TextBlock>
+                <TextBlock Margin="10,0,10,0" FontWeight="Bold">Registrierung</TextBlock>
             </Viewbox>
         </Button>
         <Button MinWidth="100" Margin="10,5,0,0" Click="BtnClickMUI" Grid.Column="2">
             <Viewbox>
-                <TextBlock Margin="10,0,10,0" FontWeight="Normal">Login</TextBlock>
+                <TextBlock Margin="10,0,10,0" FontWeight="Bold">Login</TextBlock>
             </Viewbox>
         </Button>
         <Button Margin="0,5,30,30" Width="20" Height="20" x:Name="Btn_Minimize" Click="Btn_Minimize_Click" Grid.Column="4" VerticalAlignment="Top" HorizontalAlignment="Right">
             <Viewbox>
-                <TextBlock Margin="10,10,10,0" FontWeight="Normal">-</TextBlock>
+                <TextBlock Margin="10,10,10,0" FontWeight="Bold">-</TextBlock>
             </Viewbox>
         </Button>
         <Button Margin="0,5,5,30" Width="20" Height="20" x:Name="Btn_Close" Click="Btn_Close_Click" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="4">
             <Viewbox>
-                <TextBlock Margin="10,0,10,0" FontWeight="Normal">X</TextBlock>
+                <TextBlock Margin="10,0,10,0" FontWeight="Bold">X</TextBlock>
             </Viewbox>
         </Button>
 

@@ -67,7 +67,7 @@ namespace datingAppByAJA
                     }
                     else
                     {
-                        MessageBox.Show("Passwort falsch!");
+                        MessageBox.Show("Die Zugangsdaten sind Falsch!");
                     }
                 }
                 reader.Close();

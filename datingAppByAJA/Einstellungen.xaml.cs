@@ -60,10 +60,11 @@ namespace datingAppByAJA
         {
             string name = NameText.Text;
             string vorname = VornameText.Text;
+            string geschlecht = GeschlechtBox.Text;
             var con =
                 new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
 
-            string query = $"Insert into {DBVerbindung.informationsTable}(firstname, lastname)" + $" values('{name}','{vorname}')";
+            string query = $"Insert into {DBVerbindung.informationsTable}(firstname, lastname, geschlecht)" + $" values('{name}','{vorname}','{geschlecht}')";
             var command = new MySqlCommand(query, con);
             
             try

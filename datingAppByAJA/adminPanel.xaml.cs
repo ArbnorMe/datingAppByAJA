@@ -125,6 +125,7 @@ namespace datingAppByAJA
                 {
                     lstbxAnzeige.Items.Add(
                         reader["iduser"] + " # " +
+                        reader["username"] + " # " +
                         reader["passwordUser"] + " # " +
                         reader["email"] + " # " +
                         reader["geschlecht"] + " # " +
@@ -195,6 +196,11 @@ namespace datingAppByAJA
                     MessageBox.Show("Der Nutzer konnte gelöscht werden");
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(UserDaten.username);
         }
     }
 }

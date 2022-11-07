@@ -37,19 +37,45 @@ namespace datingAppByAJA
         private void Login_Click_1(object sender, RoutedEventArgs e)
         {
             string password = PasswortPasswordBox.Password.ToString();
-            string email = UsernameTextBox.Text;
+            string email = EmailTextBox.Text;
             var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
-            string query = $"Insert into userTable(password, email)" + $" values('{password}','{email}')";
-            MessageBox.Show("Daten werden geschrieben");
-            var command = new MySqlCommand(query, connection);
+
+            // Überprüuft ob der User schon existiert
+            string userCheck = $"SELECT * FROM {DBVerbindung.userTable} WHERE email LIKE '{email}'";
+
+            var commandUserCheck = new MySqlCommand(userCheck, connection);
             try
             {
+                // SQL Befehl wird ausgeführt
                 connection.Open();
-                command.ExecuteNonQuery();
+                var reader = commandUserCheck.ExecuteReader();
+
+                // SQL Reader wird ausgeführt
+                while (reader.Read())
+                {
+                    // Guckt ob die E-Mail schon in der Datenbank vorhanden ist
+                    if (reader["passwordUser"].ToString() == password)
+                    {
+                        MessageBox.Show("Erfolgreich!");
+                        UserDaten.username = reader["username"].ToString();
+
+                        MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+                        if (window1 != null)
+                        {
+                            window1.Main.Source = new Uri("datingSeite.xaml", UriKind.Relative);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Passwort falsch!");
+                    }
+                }
+                reader.Close();
                 connection.Close();
             }
             catch (Exception ex)
             {
+                // Fehler Ausgabe
                 MessageBox.Show(ex.Message);
             }
         }
@@ -70,19 +96,19 @@ namespace datingAppByAJA
             }
         }
 
-        private void UsernameTextBox_MouseEnter(object sender, MouseEventArgs e)
+        private void EmailTextBox_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (UsernameTextBox.Text == "Username")
+            if (EmailTextBox.Text == "E-Mail")
             {
-                UsernameTextBox.Clear();
+                EmailTextBox.Clear();
             }
         }
 
-        private void UsernameTextBox_MouseLeave(object sender, MouseEventArgs e)
+        private void EmailTextBox_MouseLeave(object sender, MouseEventArgs e)
         {
             
-            if (UsernameTextBox.Text == "") 
-            { UsernameTextBox.Text = "Username"; }
+            if (EmailTextBox.Text == "") 
+            { EmailTextBox.Text = "E-Mail"; }
 
 
         }

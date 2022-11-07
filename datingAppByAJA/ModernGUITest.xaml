@@ -35,11 +35,11 @@
             <Border BorderBrush="Black" BorderThickness="2" Padding="1" Width="200">
                 <WrapPanel>
                     <TextBox FontFamily="Helvetica"
-                      Name="UsernameTextBox"
-                     MouseEnter="UsernameTextBox_MouseEnter"
-                     MouseLeave="UsernameTextBox_MouseLeave"
+                      Name="EmailTextBox"
+                     MouseEnter="EmailTextBox_MouseEnter"
+                     MouseLeave="EmailTextBox_MouseLeave"
                          FontWeight="Light"
-                         Text="Username"
+                         Text="E-Mail"
                          BorderThickness="0"
                          MinWidth="178"
                          FontSize="20"

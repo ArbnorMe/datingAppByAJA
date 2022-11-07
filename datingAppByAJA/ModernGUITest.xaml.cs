@@ -39,8 +39,7 @@ namespace datingAppByAJA
             string password = PasswortPasswordBox.Password.ToString();
             string email = UsernameTextBox.Text;
             var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
-            string query = $"Insert into userTable(password, email)" +
-                $" values('{password}','{email}')";
+            string query = $"Insert into userTable(password, email)" + $" values('{password}','{email}')";
             MessageBox.Show("Daten werden geschrieben");
             var command = new MySqlCommand(query, connection);
             try

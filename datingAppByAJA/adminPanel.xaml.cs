@@ -29,14 +29,42 @@ namespace datingAppByAJA
 
             string password = passwortEingabe.Password.ToString();
             string email = emailEingabe.Text;
+            bool userVorhanden = false;
             var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
-            
+
+            // Überprüuft ob der User schon existiert
+            string userCheck = $"SELECT * FROM {DBVerbindung.userTable} WHERE email LIKE '{email}'";
+
+            var commandUserCheck = new MySqlCommand(userCheck, connection);
+            try
+            {
+                // SQL Befehl wird ausgeführt
+                connection.Open();
+                var reader = commandUserCheck.ExecuteReader();
+
+                // SQL Reader wird ausgeführt
+                while (reader.Read())
+                {
+                    // Guckt ob die E-Mail schon in der Datenbank vorhanden ist
+                    if(reader["email"].ToString() == email)
+                    {
+                        userVorhanden = true;
+                    }
+                }
+                reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Fehler Ausgabe
+                MessageBox.Show(ex.Message);
+            }
 
             // Überprüft ob die adminCheckbox angeklickt ist
-            if (adminCheckbox.IsChecked == true)
+            if (adminCheckbox.IsChecked == true && userVorhanden == false)
             {
                 // Nutzer mit Admin Rechte wird erstellt
-                string sendenMitAdminRechte = $"Insert into {DBVerbindung.userTable}(password, email, adminRechte)" + $" values('{password}','{email}', 1)";
+                string sendenMitAdminRechte = $"Insert into {DBVerbindung.userTable}(passwordUser, email, adminRechte)" + $" values('{password}','{email}', 1)";
 
                 var command = new MySqlCommand(sendenMitAdminRechte, connection);
                 try
@@ -45,6 +73,29 @@ namespace datingAppByAJA
                     connection.Open();
                     command.ExecuteNonQuery();
                     connection.Close();
+
+                    MessageBox.Show("Nutzer mit Admin Rechte wurde erstellt.");
+                }
+                catch (Exception ex)
+                {
+                    // Fehler Ausgabe
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if (userVorhanden == false)
+            {
+                // Nutzer ohne Admin Rechte wird erstellt
+                string senden = $"Insert into {DBVerbindung.userTable}(passwordUser, email)" + $" values('{password}','{email}')";
+
+                var command = new MySqlCommand(senden, connection);
+                try
+                {
+                    // SQL Befehl wird ausgeführt
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    MessageBox.Show("Nutzer wurde erstellt.");
                 }
                 catch (Exception ex)
                 {
@@ -54,25 +105,8 @@ namespace datingAppByAJA
             }
             else
             {
-                // Nutzer ohne Admin Rechte wird erstellt
-                string senden = $"Insert into {DBVerbindung.userTable}(password, email)" + $" values('{password}','{email}')";
-
-                var command = new MySqlCommand(senden, connection);
-                try
-                {
-                    // SQL Befehl wird ausgeführt
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-                }
-                catch (Exception ex)
-                {
-                    // Fehler Ausgabe
-                    MessageBox.Show(ex.Message);
-                }
+                MessageBox.Show("Der User ist schon vorhanden");
             }
-
-            MessageBox.Show("Daten geschrieben");
         }
 
         private void abfragenBtn_Click(object sender, RoutedEventArgs e)
@@ -86,12 +120,12 @@ namespace datingAppByAJA
 
                 var command = new MySqlCommand($"SELECT * FROM {DBVerbindung.userTable} WHERE email LIKE \"{eingabe}\"", connection);
                 var reader = command.ExecuteReader();
-                lstbxAnzeige.Items.Add("iduser # password # email # geschlecht # firstname # lastname # adminRechte");
+                lstbxAnzeige.Items.Add("iduser # passwordUser # email # geschlecht # firstname # lastname # adminRechte");
                 while (reader.Read())
                 {
                     lstbxAnzeige.Items.Add(
                         reader["iduser"] + " # " +
-                        reader["password"] + " # " +
+                        reader["passwordUser"] + " # " +
                         reader["email"] + " # " +
                         reader["geschlecht"] + " # " +
                         reader["firstname"] + " # " +
@@ -160,32 +194,6 @@ namespace datingAppByAJA
                 {
                     MessageBox.Show("Der Nutzer konnte gelöscht werden");
                 }
-            }
-        }
-
-        private void testBtn_Click(object sender, RoutedEventArgs e)
-        {
-            string eingabe = kontoLoeschungText.Text;
-            var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
-
-            try
-            {
-                connection.Open();
-                var command = new MySqlCommand($"SELECT * {DBVerbindung.userTable} WHERE iduser LIKE \"{eingabe}\"", connection);
-                var reader = command.ExecuteReader();
-
-                while(reader.Read())
-                {
-                    MessageBox.Show(Convert.ToString(reader["iduser"]));
-                }
-
-                reader.Close();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                connection.Close();
-                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -58,15 +58,28 @@ namespace datingAppByAJA
                     {
                         UserDaten.username = reader["username"].ToString();
 
-                        DatingMainScreen DMS = new DatingMainScreen();
-                        DMS.Show();
-
-                        MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
-                        if (window1 != null)
+                        if (reader["adminRechte"].ToString() == "1")
                         {
-                            window1.Close();
-                        }
+                            AdminFenster DMS = new AdminFenster();
+                            DMS.Show();
 
+                            MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+                            if (window1 != null)
+                            {
+                                window1.Close();
+                            }
+                        }
+                        else
+                        {
+                            DatingMainScreen DMS = new DatingMainScreen();
+                            DMS.Show();
+
+                            MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+                            if (window1 != null)
+                            {
+                                window1.Close();
+                            }
+                        }
                     }
                     else
                     {

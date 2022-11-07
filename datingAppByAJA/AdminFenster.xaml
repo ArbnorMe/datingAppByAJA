@@ -1,0 +1,50 @@
+﻿<Window x:Class="datingAppByAJA.AdminFenster"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:datingAppByAJA"
+        mc:Ignorable="d"
+        Title="verheiratetabergeil.de" Height="500" MinHeight="477" Width="800" MinWidth="775"
+        Background="Transparent" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip">
+    <Grid x:Name="grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="105*" MinWidth="105" MaxWidth="200"></ColumnDefinition>
+            <ColumnDefinition Width="110*" MinWidth="110" MaxWidth="200"></ColumnDefinition>
+            <ColumnDefinition Width="110*" MinWidth="110" MaxWidth="200"></ColumnDefinition>
+            <ColumnDefinition Width="110*" MinWidth="110" MaxWidth="200"></ColumnDefinition>
+            <ColumnDefinition Width="370*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*" MinHeight="55" MaxHeight="80"></RowDefinition>
+            <RowDefinition Height="445*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="10" x:Name="Farben" Grid.RowSpan="2" Grid.ColumnSpan="5" MouseDown="Windows_MouseDown">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#add8e6" Offset="0.1"/>
+                    <GradientStop Color="#6a5acd" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Button MinWidth="100" Margin="5,5,0,0" Click="BtnClickAdminPanel">
+            <Viewbox>
+                <TextBlock Margin="10,0,10,0" FontWeight="Normal">Admin Panel</TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Margin="0,5,30,30" Width="20" Height="20" x:Name="Btn_Minimize" Click="Btn_Minimize_Click" Grid.Column="4" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Viewbox>
+                <TextBlock Margin="10,10,10,0" FontWeight="Normal">-</TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Margin="0,5,5,30" Width="20" Height="20" x:Name="Btn_Close" Click="Btn_Close_Click" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="4">
+            <Viewbox>
+                <TextBlock Margin="10,0,10,0" FontWeight="Normal">X</TextBlock>
+            </Viewbox>
+        </Button>
+
+        <Frame x:Name="Main" Grid.Row="1" Grid.ColumnSpan="5" NavigationUIVisibility="Hidden" Source="ModernGUITest.xaml"/>
+
+    </Grid>
+</Window>
+

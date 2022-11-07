@@ -128,9 +128,6 @@ namespace datingAppByAJA
                         reader["username"] + " # " +
                         reader["passwordUser"] + " # " +
                         reader["email"] + " # " +
-                        reader["geschlecht"] + " # " +
-                        reader["firstname"] + " # " +
-                        reader["lastname"] + " # " +
                         reader["adminRechte"] + " # "
                         );
                 }

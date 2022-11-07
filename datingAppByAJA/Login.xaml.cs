@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Linq;
+using System.Threading;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -122,12 +123,12 @@ namespace datingAppByAJA
 
         private void EmailTextBox_MouseLeave(object sender, MouseEventArgs e)
         {
-            
-            if (EmailTextBox.Text == "") 
+            if (EmailTextBox.Text == "")
             { EmailTextBox.Text = "E-Mail"; }
 
-
         }
+
+
     }
 }
 

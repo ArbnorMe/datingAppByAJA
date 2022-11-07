@@ -35,5 +35,20 @@ namespace datingAppByAJA
         {
             this.WindowState = WindowState.Minimized;
         }
+
+        private void BtnHome(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new datingSeite();
+        }
+
+        private void BtnEinstellung(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Einstellungen();
+        }
+
+        private void BtnClickAdminPanel(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new adminPanel();
+        }
     }
 }

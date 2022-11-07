@@ -31,7 +31,7 @@
         <TextBox FontFamily="Helvetica"
                       Name="Name"
                     Grid.Column="0"
-                     Grid.Row="1"
+                     Grid.Row="2"
                          FontWeight="Light"
                          Text="Name"
                          BorderThickness="0"
@@ -40,8 +40,9 @@
                          Foreground="White"
                          Background="Transparent"
                          Opacity="0.5" Height="24" MaxLength="22"/>
+        
         <TextBox Grid.Column="0"
-                     Grid.Row="2"
+                     Grid.Row="3"
                         Name="Vorname"
                          FontWeight="Light"
                          Text="Vorname"
@@ -51,8 +52,9 @@
                          Foreground="White"
                          Background="Transparent"
                          Opacity="0.5" Height="24" MaxLength="22"/>
+        
         <TextBox Grid.Column="0"
-                     Grid.Row="3"
+                     Grid.Row="4"
                  Name="Geschlecht"
                          FontWeight="Light"
                          Text="Geschlecht"
@@ -62,6 +64,50 @@
                          Foreground="White"
                          Background="Transparent"
                          Opacity="0.5" Height="24" MaxLength="22"/>
+        
+        <TextBox Grid.Column="1"
+                     Grid.Row="2"
+                 BorderBrush="Black"
+                        Name="NameText"
+                         FontWeight="Light"
+                         Text="Eingabe"
+                         BorderThickness="1"
+                         MinWidth="178"
+                         FontSize="20"
+                         Foreground="White"
+                         Background="Transparent"
 
+                         Opacity="0.5" Height="24" MaxLength="22" MouseEnter="NameEingabeEnter" MouseLeave="NameEingabeLeave"/>
+        
+        <TextBox Grid.Column="1"
+                     Grid.Row="3"
+                        Name="VornameText"
+                         FontWeight="Light"
+                         Text="Eingabe"
+                         BorderBrush="Black"
+                         BorderThickness="1"
+                         MinWidth="178"
+                         FontSize="20"
+                         Foreground="White"
+                         Background="Transparent"
+                         Opacity="0.5" Height="24" MaxLength="22" MouseEnter="VornameEnter" MouseLeave="VornameLeave"/>
+
+        <TextBox Grid.Column="1"
+                     Grid.Row="4"
+                 
+                        Name="GeschlechtText"
+                         FontWeight="Light"
+                         Text=""
+                         BorderThickness="0"
+                         MinWidth="178"
+                         FontSize="20"
+                         Foreground="White"
+                         Background="Transparent"
+                         Opacity="0.5" Height="24" MaxLength="22"/>
+        <Button MinWidth="100" MaxWidth="150" MinHeight="40" MaxHeight="80" Click="Bestätigen_Click" Grid.Row="6" Grid.Column="1">
+            <Viewbox>
+                <TextBlock Margin="10,10,10,10" FontWeight="Normal">BESTÄTIGEN</TextBlock>
+            </Viewbox>
+        </Button>
     </Grid>
 </Page>

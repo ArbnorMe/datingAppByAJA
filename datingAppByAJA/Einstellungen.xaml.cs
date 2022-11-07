@@ -60,26 +60,23 @@ namespace datingAppByAJA
         {
             string name = NameText.Text;
             string vorname = VornameText.Text;
-            MessageBox.Show("Es wird jetzt zum Server verbunden");
             var con =
                 new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
 
-                string query = $"Insert into {DBVerbindung.informationsTable}(firstname, lastname)" +
-                $" values('{name}','{vorname}')";
-                MessageBox.Show("Daten geschrieben");
-                var command = new MySqlCommand(query, con);
+            string query = $"Insert into {DBVerbindung.informationsTable}(firstname, lastname)" + $" values('{name}','{vorname}')";
+            var command = new MySqlCommand(query, con);
+            
+            try
+            {
+                con.Open();
+                command.ExecuteNonQuery();
+                con.Close();
 
-                try
-                {
-                    con.Open();
-                    command.ExecuteNonQuery();
-                    con.Close();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

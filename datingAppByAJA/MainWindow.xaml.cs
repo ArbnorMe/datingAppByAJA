@@ -44,7 +44,7 @@ namespace datingAppByAJA
 
         private void BtnClickMUI(object sender, RoutedEventArgs e)
         {
-            Main.Content = new ModernGUITest();
+            Main.Content = new Login();
         }
 
         private void BtnClickAdminPanel(object sender, RoutedEventArgs e)

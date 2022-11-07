@@ -24,7 +24,7 @@ namespace datingAppByAJA
 
         private void BtnStartseite(object sender, RoutedEventArgs e)
         {
-            Main.Content = new datingSeite();
+            Main.Content = new adminPanel();
             //Farben.Background = new LinearGradientBrush(Colors.LightBlue, Colors.SlateBlue, 90);
         }
 
@@ -35,7 +35,7 @@ namespace datingAppByAJA
 
         private void BtnClickMUI(object sender, RoutedEventArgs e)
         {
-            Main.Content = new ModernGUITest();
+            Main.Content = new Login();
         }
 
         private void BtnClickAdminPanel(object sender, RoutedEventArgs e)

@@ -16,11 +16,11 @@ using MySqlConnector;
 namespace datingAppByAJA
 {
     /// <summary>
-    /// Interaktionslogik für ModernGUITest.xaml
+    /// Interaktionslogik für Login.xaml
     /// </summary>
-    public partial class ModernGUITest : Page
+    public partial class Login : Page
     {
-        public ModernGUITest()
+        public Login()
         {
             InitializeComponent();
         }

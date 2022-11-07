@@ -58,14 +58,14 @@ namespace datingAppByAJA
 
         private void Bestätigen_Click(object sender, RoutedEventArgs e)
         {
-            string password = NameText.Text;
-            string email = VornameText.Text;
+            string name = NameText.Text;
+            string vorname = VornameText.Text;
             MessageBox.Show("Es wird jetzt zum Server verbunden");
             var con =
                 new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
 
-                string query = $"Insert into {DBVerbindung.userTable}(password, email)" +
-                $" values('{password}','{email}')";
+                string query = $"Insert into {DBVerbindung.informationsTable}(firstname, lastname)" +
+                $" values('{name}','{vorname}')";
                 MessageBox.Show("Daten geschrieben");
                 var command = new MySqlCommand(query, con);
 
@@ -75,11 +75,6 @@ namespace datingAppByAJA
                     command.ExecuteNonQuery();
                     con.Close();
 
-                    MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
-                    if (window1 != null)
-                    {
-                        window1.Main.Source = new Uri("ModernGUITest.xaml", UriKind.Relative);
-                    }
                 }
                 catch (Exception ex)
                 {

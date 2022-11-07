@@ -12,5 +12,6 @@ namespace datingAppByAJA
         public static string databaseMySql = "datingapp_db";
         public static string userTable = "user_table";
         public static string userpicturesTable = "userpicture_table";
+        public static string informationsTable = "informationen_table";
     }
 }

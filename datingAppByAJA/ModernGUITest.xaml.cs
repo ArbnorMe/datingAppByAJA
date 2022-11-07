@@ -56,7 +56,6 @@ namespace datingAppByAJA
                     // Guckt ob die E-Mail schon in der Datenbank vorhanden ist
                     if (reader["passwordUser"].ToString() == password)
                     {
-                        MessageBox.Show("Erfolgreich!");
                         UserDaten.username = reader["username"].ToString();
 
                         DatingMainScreen DMS = new DatingMainScreen();

@@ -59,11 +59,15 @@ namespace datingAppByAJA
                         MessageBox.Show("Erfolgreich!");
                         UserDaten.username = reader["username"].ToString();
 
+                        DatingMainScreen DMS = new DatingMainScreen();
+                        DMS.Show();
+
                         MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
                         if (window1 != null)
                         {
-                            window1.Main.Source = new Uri("datingSeite.xaml", UriKind.Relative);
+                            window1.Close();
                         }
+
                     }
                     else
                     {

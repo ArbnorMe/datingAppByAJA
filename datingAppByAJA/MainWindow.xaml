@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:datingAppByAJA"
         mc:Ignorable="d"
-        Title="verheiratetabergeil.de" Height="500" MinHeight="450" Width="800" MinWidth="500"
+        Title="verheiratetabergeil.de" Height="500" MinHeight="477" Width="800" MinWidth="775"
         Background="Transparent" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip">
     <Grid x:Name="grid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="105*" MinWidth="105"></ColumnDefinition>
-            <ColumnDefinition Width="110*" MinWidth="110"></ColumnDefinition>
-            <ColumnDefinition Width="110*" MinWidth="110"></ColumnDefinition>
-            <ColumnDefinition Width="110*" MinWidth="110"></ColumnDefinition>
+            <ColumnDefinition Width="105*" MinWidth="105" MaxWidth="200"></ColumnDefinition>
+            <ColumnDefinition Width="110*" MinWidth="110" MaxWidth="200"></ColumnDefinition>
+            <ColumnDefinition Width="110*" MinWidth="110" MaxWidth="200"></ColumnDefinition>
+            <ColumnDefinition Width="110*" MinWidth="110" MaxWidth="200"></ColumnDefinition>
             <ColumnDefinition Width="370*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="55*" MinHeight="55"></RowDefinition>
+            <RowDefinition Height="55*" MinHeight="55" MaxHeight="80"></RowDefinition>
             <RowDefinition Height="445*"></RowDefinition>
         </Grid.RowDefinitions>
         <Border CornerRadius="10" x:Name="Farben" Grid.RowSpan="2" Grid.ColumnSpan="5" MouseDown="Windows_MouseDown">

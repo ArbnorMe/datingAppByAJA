@@ -12,10 +12,14 @@
 
     <Grid x:Name="grid" MinWidth="350">
         <Grid.RowDefinitions>
-            <RowDefinition Height="225"/>
+            <RowDefinition Height="0.625*"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="0.625*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="240*"/>
@@ -25,9 +29,9 @@
             <ColumnDefinition Width="240*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="/logo_verheiratetabergeil_de.png" Width="200" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="3"/>
+        <Image Source="/logo_verheiratetabergeil_de.png" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="54,0,54,0"/>
 
-        <WrapPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"  VerticalAlignment="Center" HorizontalAlignment="Center">
+        <WrapPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"  VerticalAlignment="Center" HorizontalAlignment="Center">
             <Border BorderBrush="Black" BorderThickness="2" Padding="1" Width="200">
                 <WrapPanel>
                     <TextBox FontFamily="Helvetica"
@@ -47,7 +51,7 @@
             </Border>
         </WrapPanel>
 
-        <WrapPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="54,0,54,0">
+        <WrapPanel Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Border BorderBrush="Black" BorderThickness="2" Padding="1" Width="200">
                 <WrapPanel>
                     <PasswordBox x:Name="PasswortPasswordBox"
@@ -67,8 +71,16 @@
             </Border>
         </WrapPanel>
 
-        <Button Width="100" MinWidth="100" Height="40" MinHeight="40" Content="REGISTER" Click="Register_Click" Grid.Row="3"  Grid.Column="1"/>
-        <Button Width="100" MinWidth="100" Height="40" MinHeight="40" Content="LOGIN" Grid.Row="3"  Grid.Column="3" Click="Login_Click_1"/>
+        <Button MinWidth="100" MaxWidth="150" MinHeight="40" MaxHeight="80" Click="Register_Click" Grid.Row="6" Grid.Column="1">
+            <Viewbox>
+                <TextBlock Margin="10,10,10,10" FontWeight="Normal">REGISTER</TextBlock>
+            </Viewbox>
+        </Button>
+        <Button MinWidth="100" MaxWidth="150" MinHeight="40" MaxHeight="80" Click="Login_Click_1" Grid.Row="6"  Grid.Column="3">
+            <Viewbox>
+                <TextBlock Margin="10,10,10,10" FontWeight="Normal">LOGIN</TextBlock>
+            </Viewbox>
+        </Button>
 
     </Grid>
 </Page>

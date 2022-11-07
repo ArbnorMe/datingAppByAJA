@@ -43,7 +43,7 @@
             </Viewbox>
         </Button>
 
-        <Frame x:Name="Main" Grid.Row="1" Grid.ColumnSpan="5" NavigationUIVisibility="Hidden" Source="Login.xaml"/>
+        <Frame x:Name="Main" Grid.Row="1" Grid.ColumnSpan="5" NavigationUIVisibility="Hidden" Source="adminPanel.xaml"/>
 
     </Grid>
 </Window>

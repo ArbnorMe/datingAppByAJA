@@ -45,10 +45,5 @@ namespace datingAppByAJA
         {
             Main.Content = new Einstellungen();
         }
-
-        private void BtnClickAdminPanel(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new adminPanel();
-        }
     }
 }

@@ -22,22 +22,6 @@ namespace datingAppByAJA
             InitializeComponent();
         }
 
-        private void BtnStartseite(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new adminPanel();
-            //Farben.Background = new LinearGradientBrush(Colors.LightBlue, Colors.SlateBlue, 90);
-        }
-
-        private void BtnRegistrieren(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new Registrierung();
-        }
-
-        private void BtnClickMUI(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new Login();
-        }
-
         private void BtnClickAdminPanel(object sender, RoutedEventArgs e)
         {
             Main.Content = new adminPanel();

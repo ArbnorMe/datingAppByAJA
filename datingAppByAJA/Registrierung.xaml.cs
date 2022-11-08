@@ -25,43 +25,50 @@ namespace datingAppByAJA
         {
             InitializeComponent();
         }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+
+        private void registrierenBtn(object sender, RoutedEventArgs e)
         {
-
-            string password = passwortEingabe.Password;
             string email = emailEingabe.Text;
+            string password = passwortEingabe.Password;
             string passwordwdh = passwortEingabeWiederholen.Password;
-            MessageBox.Show("Es wird jetzt zum Server verbunden");
-            var con =
-                new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
+            bool userVorhanden = false;
 
-            if (password == passwordwdh)
+            var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
+
+            // Überprüuft ob der User schon existiert
+            string userCheck = $"SELECT * FROM {DBVerbindung.userTable} WHERE email LIKE '{email}'";
+
+            var commandUserCheck = new MySqlCommand(userCheck, connection);
+            try
             {
-                string query = $"Insert into {DBVerbindung.userTable}(password, email)" +
-                $" values('{password}','{email}')";
-                MessageBox.Show("Daten geschrieben");
-                var command = new MySqlCommand(query, con);
+                // SQL Befehl wird ausgeführt
+                connection.Open();
+                var reader = commandUserCheck.ExecuteReader();
 
-                try
+                // SQL Reader wird ausgeführt
+                while (reader.Read())
                 {
-                    con.Open();
-                    command.ExecuteNonQuery();
-                    con.Close();
-
-                    MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
-                    if (window1 != null)
+                    // Guckt ob die E-Mail schon in der Datenbank vorhanden ist
+                    if (reader["email"].ToString() == email)
                     {
-                        window1.Main.Source = new Uri("ModernGUITest.xaml", UriKind.Relative);
+                        userVorhanden = true;
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                // Fehler Ausgabe
+                MessageBox.Show(ex.Message);
+            }
+
+            if (password == passwordwdh && userVorhanden == false)
+            {
             }
             else
             {
-                MessageBox.Show("Passwörter sind nicht identisch");
+                MessageBox.Show("Die Passwörter sind nicht identisch!");
             }
         }
     }

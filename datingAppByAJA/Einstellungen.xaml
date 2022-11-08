@@ -72,9 +72,8 @@
                          FontWeight="Light"
                          Text="Eingabe"
                          BorderThickness="1"
-                         MinWidth="178"
                          FontSize="20"
-                         Foreground="White"
+                         Foreground="Black"
                          Background="Transparent"
 
                          Opacity="0.5" Height="24" MaxLength="22" MouseEnter="NameEingabeEnter" MouseLeave="NameEingabeLeave"/>
@@ -86,24 +85,24 @@
                          Text="Eingabe"
                          BorderBrush="Black"
                          BorderThickness="1"
-                         MinWidth="178"
                          FontSize="20"
-                         Foreground="White"
+                         Foreground="Black"
                          Background="Transparent"
                          Opacity="0.5" Height="24" MaxLength="22" MouseEnter="VornameEnter" MouseLeave="VornameLeave"/>
 
-        <TextBox Grid.Column="1"
-                     Grid.Row="4"
-                 
-                        Name="GeschlechtText"
+        <ComboBox Grid.Column="1"
+                     Grid.Row="4"               
+                        Name="GeschlechtBox"
                          FontWeight="Light"
-                         Text=""
                          BorderThickness="0"
-                         MinWidth="178"
                          FontSize="20"
-                         Foreground="White"
+                         Foreground="Black"
                          Background="Transparent"
-                         Opacity="0.5" Height="24" MaxLength="22"/>
+                         Opacity="0.5" Height="24">
+            <ComboBoxItem Content="Male"/>
+            <ComboBoxItem Content="Female"/>
+            <ComboBoxItem Content="Diverse"/>
+        </ComboBox>
         <Button MinWidth="100" MaxWidth="150" MinHeight="40" MaxHeight="80" Click="Bestätigen_Click" Grid.Row="6" Grid.Column="1">
             <Viewbox>
                 <TextBlock Margin="10,10,10,10" FontWeight="Normal">BESTÄTIGEN</TextBlock>

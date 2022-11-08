@@ -11,20 +11,41 @@
       Title="datingSeite">
 
     <Grid>
-        <Image HorizontalAlignment="Left" Height="166"  VerticalAlignment="Top" Width="158" Source="pictures/Rick_Astley.jpg" Margin="97,202,0,0"/>
-        <Button Content="Dislike" HorizontalAlignment="Left" Margin="97,378,0,0" Height="30" Width="30" VerticalAlignment="Top"/>
-        <Button Content="Like" HorizontalAlignment="Left" Margin="206,378,0,0" Height="30" Width="30" VerticalAlignment="Top"/>
-        <Button Content="next" HorizontalAlignment="Left" Height="30" Width="30" Margin="262,242,0,0" VerticalAlignment="Top"/>
-        <Button Content="back" HorizontalAlignment="Left" Margin="44,242,0,0" Height="30" Width="30" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="400,110,0,0" VerticalAlignment="Top" Width="100" x:Name="Pictures"/>
-            <Button Content="Upload" x:Name="Btn_Upload" Click="Btn_Upload_Click" Width="50" Height="50" />
-        
-        <StackPanel RenderTransformOrigin="0.509,0.514">
-        <Button Content=""  HorizontalAlignment="Left" x:Name="Favorisieren_Button" Margin="169,378,0,0" Height="30" Width="30" VerticalAlignment="Top" Click="Favorisieren_Button_Click"/>
-        <Button Content="Save" x:Name="Btn_Save" Click="Btn_Save_Click" Width="50" Height="50" />
-        <iconPacks:PackIconMaterial Kind="Heart" Height="25"/>
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"></RowDefinition>
+            <RowDefinition Height="68*"></RowDefinition>
+            <RowDefinition Height="31*"></RowDefinition>
+            <RowDefinition Height="68*"></RowDefinition>
+            <RowDefinition Height="30*"></RowDefinition>
+            <RowDefinition Height="31*"></RowDefinition>
+            <RowDefinition Height="122*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"></ColumnDefinition>
+            <ColumnDefinition Width="31*"></ColumnDefinition>
+            <ColumnDefinition Width="31*"></ColumnDefinition>
+            <ColumnDefinition Width="34*"></ColumnDefinition>
+            <ColumnDefinition Width="31*"></ColumnDefinition>
+            <ColumnDefinition Width="34*"></ColumnDefinition>
+            <ColumnDefinition Width="32*"></ColumnDefinition>
+            <ColumnDefinition Width="31*"></ColumnDefinition>
+            <ColumnDefinition Width="283*"></ColumnDefinition>
+            <ColumnDefinition Width="283*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
+        <Image Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="166" Width="158" Source="pictures/Rick_Astley.jpg" Grid.RowSpan="3" Grid.ColumnSpan="5"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="back" Margin="0,1,0,0"/>
+        <Button Grid.Row="2" Grid.Column="7" Content="next" Margin="1,0,0,1"/>
+        <Button Grid.Row="5" Grid.Column="2" Content="Dislike" Margin="0,1,0,0"/>
+        <Button Grid.Row="5" Grid.Column="4" x:Name="Favorisieren_Button" Click="Favorisieren_Button_Click" Margin="0,1,0,0">
+            <Viewbox>
+                <iconPacks:PackIconMaterial Kind="Heart" Height="25"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Row="5" Grid.Column="6" Margin="1,1,0,0" Content="Like"/>
 
+        <Image Grid.Row="6" Grid.Column="9" HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="100" x:Name="Pictures"/>
+        <Button Grid.Row="6" Grid.Column="9" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="50" Content="Upload" x:Name="Btn_Upload" Click="Btn_Upload_Click" Grid.RowSpan="2"/>
+        <Button Grid.Row="6" Grid.Column="9" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="50" Width="50" Content="Save" x:Name="Btn_Save" Click="Btn_Save_Click" Margin="0,0,0,2"/>
     </Grid>
 </Page>

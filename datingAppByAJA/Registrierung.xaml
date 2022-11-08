@@ -10,25 +10,37 @@
 
     <Grid x:Name="grid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100*"></RowDefinition>
-            <RowDefinition Height="60"></RowDefinition>
-            <RowDefinition Height="60"></RowDefinition>
-            <RowDefinition Height="60"></RowDefinition>
-            <RowDefinition Height="100*"></RowDefinition>
+            <RowDefinition Height="150*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="150*"></RowDefinition>
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-
-            <ColumnDefinition Width="505*"></ColumnDefinition>
+            <ColumnDefinition Width="310*"></ColumnDefinition>
+            <ColumnDefinition Width="230*"></ColumnDefinition>
             <ColumnDefinition Width="225*"></ColumnDefinition>
-            <ColumnDefinition Width="70*"></ColumnDefinition>
+            <ColumnDefinition Width="35*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBox Name="emailEingabe" Text="" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap"  Margin="0,9,0,9" HorizontalAlignment="Right" Width="230"/>
-        <PasswordBox Name="passwortEingabe"  Grid.Row="2" Grid.Column="0"  Margin="0,9,0,9" HorizontalAlignment="Right" Width="230"/>
-        <PasswordBox x:Name="passwortEingabeWiederholen"  Grid.Row="3" Grid.Column="0"  Margin="0,9,0,9" HorizontalAlignment="Right" Width="230"/>
-        <Label Content="E-Mail" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,330,0" Height="26" Width="44" Foreground="#FFF5EBEB"/>
-        <Label Content="Passwort" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,318,0" Height="26" Width="56" Foreground="#FFF5EBEB"/>
-        <Label Content="Passwort wiederholen" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,250,0" Height="26" Width="124" Foreground="#FFF5EBEB"/>
-        <Button Content="Registrieren" Grid.Row="3" Grid.Column="1" Margin="55,9,0,9" Click="registrierenBtn" HorizontalAlignment="Left" Width="114"/>
+        <Viewbox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Label Height="26" Width="44" Content="E-Mail" Margin="30,0,0,0" Foreground="#FFF5EBEB"/>
+        </Viewbox>
+        <Viewbox Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Label Height="26" Width="56" Content="Passwort" Margin="30,0,0,0" Foreground="#FFF5EBEB"/>
+        </Viewbox>
+        <Viewbox Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Label Height="26" Width="124" Content="Passwort wiederholen" Margin="30,0,0,0" Foreground="#FFF5EBEB"/>
+        </Viewbox>
+
+        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30" Width="230" Name="emailEingabe" Text="" TextWrapping="Wrap" Margin="0,0,0,0"/>
+        <PasswordBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30" Width="230" x:Name="passwortEingabeWiederholen" Margin="0,0,0,0"/>
+        <PasswordBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30" Width="230" Name="passwortEingabe" Margin="0,0,0,0"/>
+        <Button Grid.Row="3" Grid.Column="2" MinWidth="100" MaxWidth="150" MinHeight="50" MaxHeight="80" Click="Button_Click_1" Margin="62,0,63,0">
+            <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+                <TextBlock FontWeight="Bold">Registrieren</TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="35" Width="35" Content="Bug melden" MinHeight="35" MinWidth="35"/>
     </Grid>
 </Page>

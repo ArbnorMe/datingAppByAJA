@@ -27,17 +27,12 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-        <Button MinWidth="100" Click="BtnStartseite" Grid.Row="0" Grid.Column="0" Margin="5,5,0,0">
-            <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
-                <TextBlock Margin="10,0,10,0" FontWeight="Bold">Hello World</TextBlock>
-            </Viewbox>
-        </Button>
         <Button Margin="10,5,0,0" Click="BtnRegistrieren" Grid.Column="1">
             <Viewbox>
                 <TextBlock Margin="10,0,10,0" FontWeight="Bold">Registrierung</TextBlock>
             </Viewbox>
         </Button>
-        <Button MinWidth="100" Margin="10,5,0,0" Click="BtnClickMUI" Grid.Column="2">
+        <Button MinWidth="100" Margin="5,5,0,0" Click="BtnClickMUI">
             <Viewbox>
                 <TextBlock Margin="10,0,10,0" FontWeight="Bold">Login</TextBlock>
             </Viewbox>

@@ -41,7 +41,7 @@ namespace datingAppByAJA
             var commandUserCheck = new MySqlCommand(userCheck, connection);
             try
             {
-                // SQL Befehl wird ausgeführt
+                // SQL connection wird ausgeführt
                 connection.Open();
                 var reader = commandUserCheck.ExecuteReader();
 
@@ -52,10 +52,11 @@ namespace datingAppByAJA
                     if (reader["email"].ToString() == email)
                     {
                         userVorhanden = true;
+                        connection.Close();
+                        MessageBox.Show("Der Nutzer ist schon vorhanden!");
                     }
                 }
                 reader.Close();
-                connection.Close();
             }
             catch (Exception ex)
             {
@@ -65,6 +66,26 @@ namespace datingAppByAJA
 
             if (password == passwordwdh && userVorhanden == false)
             {
+                // Nutzer ohne Admin Rechte wird erstellt
+                string user_table = $"Insert into {DBVerbindung.userTable}(passwordUser, email)" + $" values('{password}','{email}')";
+                string informationen_table = $"Insert into {DBVerbindung.informationsTable}(email)" + $" values('{email}')";
+
+                var command1 = new MySqlCommand(user_table, connection);
+                var command2 = new MySqlCommand(informationen_table, connection);
+                try
+                {
+                    // SQL Befehl wird ausgeführt
+                    command1.ExecuteNonQuery();
+                    command2.ExecuteNonQuery();
+                    connection.Close();
+
+                    MessageBox.Show("Nutzer wurde erstellt.");
+                }
+                catch (Exception ex)
+                {
+                    // Fehler Ausgabe
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
             {

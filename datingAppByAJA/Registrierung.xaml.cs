@@ -28,6 +28,7 @@ namespace datingAppByAJA
 
         private void registrierenBtn(object sender, RoutedEventArgs e)
         {
+            string nutzername = nutzernameEingabe.Text;
             string email = emailEingabe.Text;
             string password = passwortEingabe.Password;
             string passwordwdh = passwortEingabeWiederholen.Password;
@@ -64,32 +65,42 @@ namespace datingAppByAJA
                 MessageBox.Show(ex.Message);
             }
 
-            if (password == passwordwdh && userVorhanden == false)
+            if (userVorhanden == false)
             {
-                // Nutzer ohne Admin Rechte wird erstellt
-                string user_table = $"Insert into {DBVerbindung.userTable}(passwordUser, email)" + $" values('{password}','{email}')";
-                string informationen_table = $"Insert into {DBVerbindung.informationsTable}(email)" + $" values('{email}')";
-
-                var command1 = new MySqlCommand(user_table, connection);
-                var command2 = new MySqlCommand(informationen_table, connection);
-                try
+                if (password == passwordwdh)
                 {
-                    // SQL Befehl wird ausgeführt
-                    command1.ExecuteNonQuery();
-                    command2.ExecuteNonQuery();
-                    connection.Close();
+                    // Nutzer ohne Admin Rechte wird erstellt
+                    string user_table = $"Insert into {DBVerbindung.userTable}(username, passwordUser, email)" + $" values('{nutzername}','{password}','{email}')";
+                    string informationen_table = $"Insert into {DBVerbindung.informationsTable}(email)" + $" values('{email}')";
+                    string userpictures_table = $"Insert into {DBVerbindung.userpicturesTable}(email)" + $" values('{email}')";
 
-                    MessageBox.Show("Nutzer wurde erstellt.");
+                    var command1 = new MySqlCommand(user_table, connection);
+                    var command2 = new MySqlCommand(informationen_table, connection);
+                    var command3 = new MySqlCommand(userpictures_table, connection);
+                    try
+                    {
+                        // SQL Befehl wird ausgeführt
+                        command1.ExecuteNonQuery();
+                        command2.ExecuteNonQuery();
+                        command3.ExecuteNonQuery();
+                        connection.Close();
+
+                        MessageBox.Show("Nutzer wurde erstellt.");
+                    }
+                    catch (Exception ex)
+                    {
+                        // Fehler Ausgabe
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    // Fehler Ausgabe
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Die Passwörter sind nicht identisch!");
                 }
             }
             else
             {
-                MessageBox.Show("Die Passwörter sind nicht identisch!");
+                MessageBox.Show("Der Nutzername ist leider schon vergeben!");
             }
         }
     }

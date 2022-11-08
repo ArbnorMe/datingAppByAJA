@@ -37,7 +37,7 @@ namespace datingAppByAJA
 
             if (password == passwordwdh)
             {
-                string query = $"Insert into {DBVerbindung.userTable}(password, email)" +
+                string query = $"Insert into {DBVerbindung.userTable}(passwordUser, email)" +
                 $" values('{password}','{email}')";
                 MessageBox.Show("Daten geschrieben");
                 var command = new MySqlCommand(query, con);
@@ -51,7 +51,7 @@ namespace datingAppByAJA
                     MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
                     if (window1 != null)
                     {
-                        window1.Main.Source = new Uri("ModernGUITest.xaml", UriKind.Relative);
+                        window1.Main.Source = new Uri("Login.xaml", UriKind.Relative);
                     }
                 }
                 catch (Exception ex)

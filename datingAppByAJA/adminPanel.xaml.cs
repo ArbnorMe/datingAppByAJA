@@ -29,6 +29,7 @@ namespace datingAppByAJA
 
             string password = passwortEingabe.Password.ToString();
             string email = emailEingabe.Text;
+            string nutzername = usernameEingabe.Text;
             bool userVorhanden = false;
             var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
 
@@ -65,6 +66,13 @@ namespace datingAppByAJA
             {
                 // Nutzer mit Admin Rechte wird erstellt
                 string sendenMitAdminRechte = $"Insert into {DBVerbindung.userTable}(passwordUser, email, adminRechte)" + $" values('{password}','{email}', 1)";
+                string user_table = $"Insert into {DBVerbindung.userTable}(username, passwordUser, email)" + $" values('{nutzername}','{password}','{email}')";
+                string informationen_table = $"Insert into {DBVerbindung.informationsTable}(email)" + $" values('{email}')";
+                string userpictures_table = $"Insert into {DBVerbindung.userpicturesTable}(email)" + $" values('{email}')";
+
+                var command1 = new MySqlCommand(user_table, connection);
+                var command2 = new MySqlCommand(informationen_table, connection);
+                var command3 = new MySqlCommand(userpictures_table, connection);
 
                 var command = new MySqlCommand(sendenMitAdminRechte, connection);
                 try
@@ -118,9 +126,9 @@ namespace datingAppByAJA
 
                 connection.Open();
 
-                var command = new MySqlCommand($"SELECT * FROM {DBVerbindung.userTable} WHERE email LIKE \"{eingabe}\"", connection);
+                var command = new MySqlCommand($"SELECT * FROM {DBVerbindung.userTable} WHERE username LIKE \"{eingabe}\"", connection);
                 var reader = command.ExecuteReader();
-                lstbxAnzeige.Items.Add("iduser # passwordUser # email # geschlecht # firstname # lastname # adminRechte");
+                lstbxAnzeige.Items.Add("iduser # username # passwordUser # email # adminRechte");
                 while (reader.Read())
                 {
                     lstbxAnzeige.Items.Add(
@@ -128,7 +136,7 @@ namespace datingAppByAJA
                         reader["username"] + " # " +
                         reader["passwordUser"] + " # " +
                         reader["email"] + " # " +
-                        reader["adminRechte"] + " # "
+                        reader["adminRechte"]
                         );
                 }
                 reader.Close();
@@ -145,18 +153,18 @@ namespace datingAppByAJA
             string eingabe = kontoLoeschungText.Text;
             bool besteatigung = false;
             var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
-            Console.WriteLine("TEST!");
+
             try
             {
                 connection.Open();
 
-                var command = new MySqlCommand($"SELECT * FROM {DBVerbindung.userTable} WHERE iduser LIKE \"{eingabe}\"", connection);
+                var command = new MySqlCommand($"SELECT * FROM {DBVerbindung.userTable} WHERE email LIKE \"{eingabe}\"", connection);
                 var reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    string iduserSV = Convert.ToString(reader["iduser"]);
-                    if (iduserSV == eingabe)
+                    string emailSV = Convert.ToString(reader["email"]);
+                    if (emailSV == eingabe)
                     {
                         besteatigung = true;
                     }
@@ -176,21 +184,26 @@ namespace datingAppByAJA
 
             if (besteatigung == true)
             {
-                string mySqlBefehl = $"DELETE FROM `{DBVerbindung.userTable}` WHERE (`iduser` = '{eingabe}')";
-                var command = new MySqlCommand(mySqlBefehl, connection);
+                string mySqlBefehl1 = $"DELETE FROM {DBVerbindung.userTable} WHERE (email = '{eingabe}')";
+                string mySqlBefehl2 = $"DELETE FROM {DBVerbindung.userpicturesTable} WHERE (email = '{eingabe}')";
+                string mySqlBefehl3 = $"DELETE FROM {DBVerbindung.informationsTable} WHERE (email = '{eingabe}')";
+                var command1 = new MySqlCommand(mySqlBefehl1, connection);
+                var command2 = new MySqlCommand(mySqlBefehl2, connection);
+                var command3 = new MySqlCommand(mySqlBefehl2, connection);
+
                 try
                 {
                     connection.Open();
-                    command.ExecuteNonQuery();
+                    command1.ExecuteNonQuery();
+                    command2.ExecuteNonQuery();
+                    command3.ExecuteNonQuery();
                     connection.Close();
-                }
-                catch
-                {
-                    MessageBox.Show("Fehler beim Löschen.");
-                }
-                finally
-                {
+
                     MessageBox.Show("Der Nutzer konnte gelöscht werden");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Fehler beim Löschen. \nFehler: " + ex);
                 }
             }
         }

@@ -169,7 +169,9 @@ namespace datingAppByAJA
         private void vornameEingabe_MouseLeave(object sender, MouseEventArgs e)
         {
             if (vornameEingabe.Text == "")
-            { vornameEingabe.Text = "Vorname"; }
+            {
+                vornameEingabe.Text = "Vorname";
+            }
         }
     }
 }

@@ -166,7 +166,7 @@ namespace datingAppByAJA
         private void Btn_load_Click(object sender, RoutedEventArgs e)
         {
             byte[] bytes = new byte[0];
-            string sql = $"SELECT img FROM info WHERE info_id = {UserDaten.email};";
+            string sql = $"SELECT * FROM {DBVerbindung.userTable} WHERE email = {UserDaten.email};";
             try
             {
                 //Bytearray auslesen aus der Datenbank

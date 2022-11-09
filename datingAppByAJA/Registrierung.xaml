@@ -43,7 +43,6 @@
                     <TextBox
                         FontFamily="Helvetica"
                         Name="nutzernameEingabe"
-                        MouseEnter=""
                         MouseLeave=""
                         FontWeight="Light"
                         Text="Nutzername"

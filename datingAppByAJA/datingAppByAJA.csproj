@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="logodatingapp.ico" />
     <None Remove="logo_verheiratetabergeil_de.png" />
     <None Remove="pictures\Rick_Astley.jpg" />
   </ItemGroup>
@@ -23,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="pictures\logodatingapp.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="logo_verheiratetabergeil_de.png" />
   </ItemGroup>
 

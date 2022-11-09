@@ -106,21 +106,17 @@ namespace datingAppByAJA
         {
             // Stumpf von Phillip geklaut
             MySqlConnection connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
-            connection.Open();
-            MySqlCommand command = connection.CreateCommand();
-            string sql = $"UPDATE {DBVerbindung.userpicturesTable} SET MyImage = LOAD_FILE('{imgLocation}'), FileName = '{imgLocation}' WHERE email = '{UserDaten.email}';";
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            adapter.UpdateCommand = new MySqlCommand(sql, connection);
+            string sql = $"UPDATE {DBVerbindung.userpicturesTable} SET MyImage = LOAD_FILE('{Convert.FromBase64String(imgLocation)}'), FileName = '{bi}' WHERE email = 'Fenyu.de';";
+            var command = new MySqlCommand(sql, connection);
             try
             {
-                if (adapter.UpdateCommand.ExecuteNonQuery() > 0)
-                {
+ 
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
                     MessageBox.Show("Funktioniert mein Lord!");
-                }
-                else
-                {
-                    MessageBox.Show("Funktioniert nicht!");
-                }
+                
+
             }
             catch (Exception ex)
             {
@@ -152,8 +148,8 @@ namespace datingAppByAJA
                     pictureBox.Source = bi;
                     byte[] imagearray = System.IO.File.ReadAllBytes(open.FileName);
                     string texte = Convert.ToBase64String(imagearray);
-                    //imgLocation = texte;
-                    MessageBox.Show(texte);
+                    imgLocation = texte;
+                    //MessageBox.Show(texte);
                 }
                 catch (Exception ex)
                 {

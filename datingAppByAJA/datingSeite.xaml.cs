@@ -27,6 +27,8 @@ namespace datingAppByAJA
             InitializeComponent();
         }
 
+        public string imgLocation = "";
+
         private void Favorisieren_Button_Click(object sender, RoutedEventArgs e)
         {
             Favorisieren_Button.Background = new SolidColorBrush(Colors.Red);
@@ -34,50 +36,34 @@ namespace datingAppByAJA
 
         private void Btn_Upload_Click(object sender, RoutedEventArgs e)
         {
+            // MySQL verbindung
+            var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
+            // Image location
+            string imgLocation = "";
 
-            var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.userTable};database{DBVerbindung.userpicturesTable}");
+            MySqlCommand cmd;
 
-                using (MySqlCommand cmd = new MySqlCommand($"INSERT INTO '{DBVerbindung.userpicturesTable}'(myimage) VALUES (@IM)", connection))
-                {
-                OpenFileDialog open = new OpenFileDialog();
-                open.Title = "Open Picture";
-                open.Multiselect = false;
-                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            try
+            {
+                byte[] images = null;
+                FileStream streem = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader brs = new BinaryReader(streem);
+                images = brs.ReadBytes((int)streem.Length);
 
-                if (open.ShowDialog() == true)
-                {
-                    try
-                    {
-                        bi = new BitmapImage();
-                        bi.BeginInit();
-                        bi.UriSource = new Uri(open.FileName, UriKind.RelativeOrAbsolute);
-                        bi.EndInit();
-
-                        //Pictures.Source = bi;
-                    }
-                    catch (System.Exception c) { Console.Write("Exception" + c); }
-                }
-                
+                connection.Open();
+                string sqlQuery = "Insert into bioData(email,Name,Image)Values'" + UserDaten.email + "','" + UserDaten.username + "Profilbild',@images";
+                cmd = new MySqlCommand(sqlQuery, connection);
+                cmd.Parameters.Add(new SqlParameter(""))
             }
+            catch(Exception ex)
+            {
+                // Fehleranzeige
+                MessageBox.Show(ex.Message);
             }
+        }
 
         private void Btn_Save_Click(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog save = new SaveFileDialog();
-            save.Title = "Save picture as ";
-            save.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (bi != null)
-            {
-                if (save.ShowDialog() == true)
-                {
-                    JpegBitmapEncoder jpg = new JpegBitmapEncoder();
-                    jpg.Frames.Add(BitmapFrame.Create(bi));
-                    using (Stream stm = File.Create(save.FileName))
-                    {
-                        jpg.Save(stm);
-                    }
-                }
-            }
         }
     }
   }

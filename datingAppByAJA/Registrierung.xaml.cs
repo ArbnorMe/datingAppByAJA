@@ -114,6 +114,7 @@ namespace datingAppByAJA
                     {
                         window1.Main.Source = new Uri("Login.xaml", UriKind.Relative);
                     }
+                    MessageBox.Show("Der Nutzer " + nutzername + " wurde erstellt.");
                 }
                 else
                 {

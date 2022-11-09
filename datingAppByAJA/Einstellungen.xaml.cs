@@ -30,42 +30,11 @@ namespace datingAppByAJA
 
         public string imgLocation = "";
        
-
-
-        //Damit wenn man mit der Maus reingeht verschwindet der Template Text
-        private void NameEingabeEnter(object sender, MouseEventArgs e)
-        {
-            if (NameText.Text == "Eingabe")
-            {
-                NameText.Clear();
-            }
-        }
-        //Damit wenn man mit der Maus rausgeht erscheint der Template Text, wenn dort nichts reingeschrieben wurde
-        private void NameEingabeLeave(object sender, MouseEventArgs e)
-        {
-            if (NameText.Text == "")
-            { NameText.Text = "Eingabe"; }
-        }
-
-        private void VornameEnter(object sender, MouseEventArgs e)
-        {
-            if (VornameText.Text == "Eingabe")
-            {
-                VornameText.Clear();
-            }
-        }
-
-        private void VornameLeave(object sender, MouseEventArgs e)
-        {
-            if (VornameText.Text == "")
-            { VornameText.Text = "Eingabe"; }
-        }
-
         private void Besteatigen_Click(object sender, RoutedEventArgs e)
         {
             //Sind die 3 Boxen wo man seine Daten eingeben kann
-            string name = NameText.Text;
-            string vorname = VornameText.Text;
+            string name = nameEingabe.Text;
+            string vorname = vornameEingabe.Text;
             string geschlecht = GeschlechtBox.Text;
             var con = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
             //Die 3 Boxen werden damit in der Datenbank gespeichert
@@ -174,6 +143,36 @@ namespace datingAppByAJA
             }
             pictureBox.Source = LoadImage(bytes);
         }
+        //Damit wenn man mit der Maus reingeht verschwindet der Template Text
+        private void nameEingabe_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (nameEingabe.Text == "Name")
+            {
+                nameEingabe.Clear();
+            }
+        }
+
+        private void nameEingabe_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (nameEingabe.Text == "")
+            { nameEingabe.Text = "Name"; }
+        }
+
+        private void vornameEingabe_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (vornameEingabe.Text == "Vorname")
+            {
+                vornameEingabe.Clear();
+            }
+        }
+
+        private void vornameEingabe_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (vornameEingabe.Text == "")
+            { vornameEingabe.Text = "Vorname"; }
+        }
     }
 }
+    
+
 

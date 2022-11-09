@@ -12,86 +12,75 @@
 
     <Grid x:Name="grid" MinWidth="350">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.625*"/>
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="0.625*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="60*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
             <ColumnDefinition Width="100*"/>
             <ColumnDefinition Width="100*"/>
-            <ColumnDefinition Width="100*"/>
-            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="200*"/>
         </Grid.ColumnDefinitions>
-        <TextBox FontFamily="Helvetica"
-                      Name="Name"
-                    Grid.Column="0"
-                     Grid.Row="2"
-                         FontWeight="Light"
-                         Text="Name"
-                         BorderThickness="0"
-                         MinWidth="178"
-                         FontSize="20"
-                         Foreground="White"
-                         Background="Transparent"
-                         Opacity="0.5" Height="24" MaxLength="22"/>
 
-        <TextBox Grid.Column="0"
-                     Grid.Row="3"
-                        Name="Vorname"
-                         FontWeight="Light"
-                         Text="Vorname"
-                         BorderThickness="0"
-                         MinWidth="178"
-                         FontSize="20"
-                         Foreground="White"
-                         Background="Transparent"
-                         Opacity="0.5" Height="24" MaxLength="22"/>
+        <Viewbox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Label Height="26" Width="100" Content="Nutzername" Margin="25,0,0,0" Foreground="#FFF5EBEB" FontWeight="Bold" FontSize="12"/>
+        </Viewbox>
 
-        <TextBox Grid.Column="0"
-                     Grid.Row="4"
-                 Name="Geschlecht"
-                         FontWeight="Light"
-                         Text="Geschlecht"
-                         BorderThickness="0"
-                         MinWidth="178"
-                         FontSize="20"
-                         Foreground="White"
-                         Background="Transparent"
-                         Opacity="0.5" Height="24" MaxLength="22"/>
+        <Viewbox Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Label Height="26" Width="100" Content="Vorname" Margin="25,0,0,0" Foreground="#FFF5EBEB" FontWeight="Bold"/>
+        </Viewbox>
 
-        <TextBox Grid.Column="1"
-                     Grid.Row="2"
-                 BorderBrush="Black"
-                        Name="NameText"
-                         FontWeight="Light"
-                         Text="Eingabe"
-                         BorderThickness="1"
-                         FontSize="20"
-                         Foreground="Black"
-                         Background="Transparent"
+        <Viewbox Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Label Height="26" Width="100" Content="Geschlecht" Margin="25,0,0,0" Foreground="#FFF5EBEB" FontWeight="Bold"/>
+        </Viewbox>
 
-                         Opacity="0.5" Height="24" MaxLength="22" MouseEnter="NameEingabeEnter" MouseLeave="NameEingabeLeave"/>
+        <WrapPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border BorderBrush="Black" BorderThickness="2" Padding="1" Width="200">
+                <WrapPanel>
+                    <TextBox
+                        FontFamily="Helvetica"
+                        Name="nameEingabe"
+                        MouseEnter="nameEingabe_MouseEnter"
+                        MouseLeave="nameEingabe_MouseLeave"
+                        FontWeight="Light"
+                        Text="Name"
+                        BorderThickness="0"
+                        MinWidth="178"
+                        FontSize="20"
+                        Foreground="White"
+                        Background="Transparent"
+                        Opacity="0.5" Height="24" MaxLength="22"/>
+                </WrapPanel>
+            </Border>
+        </WrapPanel>
 
-        <TextBox Grid.Column="1"
-                     Grid.Row="3"
-                        Name="VornameText"
-                         FontWeight="Light"
-                         Text="Eingabe"
-                         BorderBrush="Black"
-                         BorderThickness="1"
-                         FontSize="20"
-                         Foreground="Black"
-                         Background="Transparent"
-                         Opacity="0.5" Height="24" MaxLength="22" MouseEnter="VornameEnter" MouseLeave="VornameLeave"/>
+        <WrapPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border BorderBrush="Black" BorderThickness="2" Padding="1" Width="200">
+                <WrapPanel>
+                    <TextBox
+                        FontFamily="Helvetica"
+                        Name="vornameEingabe"
+                        MouseEnter="vornameEingabe_MouseEnter"
+                        MouseLeave="vornameEingabe_MouseLeave"
+                        FontWeight="Light"
+                        Text="Vorname"
+                        BorderThickness="0"
+                        MinWidth="178"
+                        FontSize="20"
+                        Foreground="White"
+                        Background="Transparent"
+                        Opacity="0.5" Height="24" MaxLength="22"/>
+                </WrapPanel>
+            </Border>
+        </WrapPanel>
 
         <ComboBox Grid.Column="1"
-                     Grid.Row="4"               
+                     Grid.Row="3"               
                         Name="GeschlechtBox"
                          FontWeight="Light"
                          BorderThickness="0"
@@ -103,14 +92,14 @@
             <ComboBoxItem Content="Female"/>
             <ComboBoxItem Content="Diverse"/>
         </ComboBox>
-        <Button MinWidth="100" MaxWidth="150" MinHeight="40" MaxHeight="80" Click="Besteatigen_Click" Grid.Row="6" Grid.Column="1">
+        <Button MinWidth="100" MaxWidth="150" MinHeight="40" MaxHeight="80" Click="Besteatigen_Click" Grid.Row="4" Grid.Column="2" Grid.RowSpan="2" Margin="0,0,0,50">
             <Viewbox>
-                <TextBlock Margin="10,10,10,10" FontWeight="Normal">BESTÄTIGEN</TextBlock>
+                <TextBlock Margin="10,10,10,10" FontWeight="Bold">BESTÄTIGEN</TextBlock>
             </Viewbox>
         </Button>
         <Button Grid.Row="6" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="50" Width="50" Content="Upload" x:Name="Btn_Upload" Click="Btn_Upload_Click" Grid.RowSpan="2" Margin="81,0,0,0"/>
         <Button Grid.Row="6" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="50" Width="50" Content="Save" x:Name="Btn_Save" Click="Btn_Save_Click" Margin="0,0,0,2" Grid.RowSpan="2"/>
-        <Image x:Name="pictureBox" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="166" Width="158" Source="/pictures/Rick_Astley.jpg" Grid.RowSpan="3" Margin="51,75,0,0"/>
+        <Image x:Name="pictureBox" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="166" Width="158" Source="/pictures/Rick_Astley.jpg"/>
         <Button Grid.Row="6" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="50" Width="50" Content="Load" x:Name="BTN_Load" Click="Btn_load_Click" Grid.RowSpan="2" Margin="0,0,0,2"/>
     </Grid>
 </Page>

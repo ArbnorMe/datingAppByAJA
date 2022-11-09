@@ -126,5 +126,64 @@ namespace datingAppByAJA
                 MessageBox.Show("Der Nutzername ist leider schon vergeben!");
             }
         }
+
+        private void nutzernameEingabe_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (nutzernameEingabe.Text == "Nutzername")
+            {
+                nutzernameEingabe.Clear();
+            }
+        }
+
+        private void nutzernameEingabe_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (emailEingabe.Text == "")
+            { emailEingabe.Text = "Nutzername"; }
+        }
+
+        private void emailEingabe_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (emailEingabe.Text == "E-Mail")
+            {
+                emailEingabe.Clear();
+            }
+        }
+
+        private void emailEingabe_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (emailEingabe.Text == "")
+            { emailEingabe.Text = "E-Mail"; }
+        }
+
+        private void passwortEingabe_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (passwortEingabe.Password == "Password")
+            {
+                passwortEingabe.Clear();
+            }
+        }
+
+        private void passwortEingabe_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (passwortEingabe.Password == "")
+            {
+                passwortEingabe.Password = "Password";
+            }
+        }
+        private void passwortEingabeWiederholen_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (passwortEingabeWiederholen.Password == "Password")
+            {
+                passwortEingabeWiederholen.Clear();
+            }
+        }
+
+        private void passwortEingabeWiederholen_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (passwortEingabeWiederholen.Password == "")
+            {
+                passwortEingabeWiederholen.Password = "Password";
+            }
+        }
     }
 }

@@ -61,7 +61,7 @@ namespace datingAppByAJA
             { VornameText.Text = "Eingabe"; }
         }
 
-        private void Btn_Upload_Click(object sender, RoutedEventArgs e)
+        private void Besteatigen_Click(object sender, RoutedEventArgs e)
         {
             //Sind die 3 Boxen wo man seine Daten eingeben kann
             string name = NameText.Text;
@@ -85,7 +85,24 @@ namespace datingAppByAJA
                 MessageBox.Show(ex.Message);
             }
         }
-        public void Besteatigen_Click(object sender, RoutedEventArgs e)
+        private BitmapImage LoadImage(byte[] imageData)
+        {
+            if (imageData == null || imageData.Length == 0) return null;
+            var image = new BitmapImage();
+            using (var mem = new MemoryStream(imageData))
+            {
+                mem.Position = 0;
+                image.BeginInit();
+                image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = null;
+                image.StreamSource = mem;
+                image.EndInit();
+            }
+            image.Freeze();
+            return image;
+        }
+        public void Btn_Upload_Click(object sender, RoutedEventArgs e)
         {
             // Stumpf von Phillip geklaut
             MySqlConnection connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
@@ -95,15 +112,22 @@ namespace datingAppByAJA
             string sql = $"UPDATE {DBVerbindung.userpicturesTable} SET MyImage = (SELECT * FROM OPENROWSET(BULK N'{imgLocation}', SINGLE_BLOB) as tempimg), FileName = '{imgLocation}' WHERE email = {UserDaten.email} ;";
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             adapter.UpdateCommand = new MySqlCommand(sql, connection);
-
-            if (adapter.UpdateCommand.ExecuteNonQuery() > 0)
+            try
             {
-                MessageBox.Show("Funzt");
+                if (adapter.UpdateCommand.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Funzt");
+                }
+                else
+                {
+                    MessageBox.Show("122");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("funzt nicht");
+                MessageBox.Show(ex.Message);
             }
+            
 
             command.Dispose();
             connection.Close();
@@ -137,6 +161,23 @@ namespace datingAppByAJA
                     Console.Write("Exception: " + ex);
                 }
             }
+        }
+
+        private void Btn_load_Click(object sender, RoutedEventArgs e)
+        {
+            byte[] bytes = new byte[0];
+            string sql = $"SELECT img FROM info WHERE info_id = {UserDaten.email};";
+            try
+            {
+                //Bytearray auslesen aus der Datenbank
+                //in bytes speichern
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unbekannter Datenbankfehler:\n\r" + ex.Message);
+                return;
+            }
+            pictureBox.Source = LoadImage(bytes);
         }
     }
 }

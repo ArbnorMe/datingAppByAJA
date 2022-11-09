@@ -4,6 +4,7 @@ using System.Text;
 
 namespace datingAppByAJA
 {
+    //Die Datenbank Einlog Daten + Die Datenbank Tabellen
     public static class DBVerbindung
     {
         public static string serverMySql = "datingapp-mysql.arbnor.me";

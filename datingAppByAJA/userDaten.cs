@@ -4,6 +4,7 @@ using System.Text;
 
 namespace datingAppByAJA
 {
+    //Von den Usern die ganzen Daten die in der Datenbank gespeichert werden
     public static class UserDaten
     {
         public static int idUser;

@@ -23,6 +23,7 @@ namespace datingAppByAJA
         }
         private void Windows_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            //Damit man das Programm umherschieben kann (Alles über der Frame also in der Zeile wo die Buttons Leben)
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }

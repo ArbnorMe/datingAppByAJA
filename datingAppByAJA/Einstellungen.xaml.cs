@@ -22,7 +22,6 @@ namespace datingAppByAJA
     /// </summary>
     public partial class Einstellungen : Page
     {
-
         BitmapImage bi = null;
         public Einstellungen()
         {
@@ -62,7 +61,7 @@ namespace datingAppByAJA
             { VornameText.Text = "Eingabe"; }
         }
 
-        private void Besteatigen_Click(object sender, RoutedEventArgs e)
+        private void Btn_Upload_Click(object sender, RoutedEventArgs e)
         {
             //Sind die 3 Boxen wo man seine Daten eingeben kann
             string name = NameText.Text;
@@ -86,12 +85,36 @@ namespace datingAppByAJA
                 MessageBox.Show(ex.Message);
             }
         }
-        public void Btn_Upload_Click(object sender, RoutedEventArgs e)
+        public void Besteatigen_Click(object sender, RoutedEventArgs e)
+        {
+            // Stumpf von Phillip geklaut
+            MySqlConnection connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
+            connection.Open();
+            MySqlCommand command = connection.CreateCommand();
+
+            string sql = $"UPDATE {DBVerbindung.userpicturesTable} SET MyImage = (SELECT * FROM OPENROWSET(BULK N'{imgLocation}', SINGLE_BLOB) as tempimg), FileName = '{imgLocation}' WHERE email = {UserDaten.email} ;";
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            adapter.UpdateCommand = new MySqlCommand(sql, connection);
+
+            if (adapter.UpdateCommand.ExecuteNonQuery() > 0)
+            {
+                MessageBox.Show("Funzt");
+            }
+            else
+            {
+                MessageBox.Show("funzt nicht");
+            }
+
+            command.Dispose();
+            connection.Close();
+        }
+
+        private void Btn_Save_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Title = "Open Picture";
             open.Multiselect = false;
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            open.Filter = "Image Files(.jpg;.jpeg; .gif;.bmp)|.jpg;.jpeg; .gif;.bmp";
 
             if (open.ShowDialog() == true)
             {
@@ -113,36 +136,6 @@ namespace datingAppByAJA
                 {
                     Console.Write("Exception: " + ex);
                 }
-            }
-        }
-
-
-        private void Btn_Save_Click(object sender, RoutedEventArgs e)
-        {
-            // MySQL verbindung
-            var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
-
-            MySqlCommand cmd;
-
-            try
-            {
-                
-                byte[] images = null;
-                FileStream streem = new FileStream(imgLocation, FileMode.Open, FileAccess.Read); // Hier findet der Fehler statt
-                BinaryReader brs = new BinaryReader(streem, Encoding.UTF8);
-                images = brs.ReadBytes((int)streem.Length);
-                connection.Open();
-                string sqlQuery = $"Insert into {DBVerbindung.userpicturesTable}(email,FileName,myImage)Values'" + UserDaten.email + "','" + UserDaten.username;
-                cmd = new MySqlCommand(sqlQuery, connection);
-                cmd.Parameters.Add(new MySqlParameter("myImage", images));
-                //var n = cmd.ExecuteNonQuery();
-                connection.Close();
-                MessageBox.Show(" Datei wurde erfolgreich gesichert.......");
-            }
-            catch (Exception ex)
-            {
-                // Fehleranzeige
-                MessageBox.Show(ex.Message);
             }
         }
     }

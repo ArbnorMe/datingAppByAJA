@@ -137,8 +137,8 @@ namespace datingAppByAJA
 
         private void nutzernameEingabe_MouseLeave(object sender, MouseEventArgs e)
         {
-            if (emailEingabe.Text == "")
-            { emailEingabe.Text = "Nutzername"; }
+            if (nutzernameEingabe.Text == "")
+            { nutzernameEingabe.Text = "Nutzername"; }
         }
 
         private void emailEingabe_MouseEnter(object sender, MouseEventArgs e)

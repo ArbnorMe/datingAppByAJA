@@ -29,7 +29,7 @@ namespace datingAppByAJA
         }
 
         public string imgLocation = "";
-
+       
 
 
         //Damit wenn man mit der Maus reingeht verschwindet der Template Text
@@ -102,13 +102,12 @@ namespace datingAppByAJA
             image.Freeze();
             return image;
         }
-        public void Btn_Upload_Click(object sender, RoutedEventArgs e)
+        public void Btn_Save_Click(object sender, RoutedEventArgs e)
         {
             // Stumpf von Phillip geklaut
             MySqlConnection connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
             connection.Open();
             MySqlCommand command = connection.CreateCommand();
-
             string sql = $"UPDATE {DBVerbindung.userpicturesTable} SET MyImage = LOAD_FILE('{imgLocation}'), FileName = '{imgLocation}' WHERE email = '{UserDaten.email}';";
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             adapter.UpdateCommand = new MySqlCommand(sql, connection);
@@ -133,7 +132,7 @@ namespace datingAppByAJA
             connection.Close();
         }
 
-        private void Btn_Save_Click(object sender, RoutedEventArgs e)
+        private void Btn_Upload_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Title = "Open Picture";

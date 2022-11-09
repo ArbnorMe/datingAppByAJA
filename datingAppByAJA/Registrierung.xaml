@@ -37,10 +37,84 @@
             <Label Height="26" Width="124" Content="Passwort wiederholen" Margin="30,0,0,0" Foreground="#FFF5EBEB"/>
         </Viewbox>
 
-        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30" Width="230" Name="nutzernameEingabe" Text="" TextWrapping="Wrap" Margin="0,0,0,0"/>
-        <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30" Width="230" Name="emailEingabe" Text="" TextWrapping="Wrap" Margin="0,0,0,0"/>
-        <PasswordBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30" Width="230" Name="passwortEingabe" Margin="0,0,0,0"/>
-        <PasswordBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30" Width="230" x:Name="passwortEingabeWiederholen" Margin="0,0,0,0"/>
+        <WrapPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border BorderBrush="Black" BorderThickness="2" Padding="1" Width="200">
+                <WrapPanel>
+                    <TextBox
+                        FontFamily="Helvetica"
+                        Name="nutzernameEingabe"
+                        MouseEnter=""
+                        MouseLeave=""
+                        FontWeight="Light"
+                        Text="Nutzername"
+                        BorderThickness="0"
+                        MinWidth="178"
+                        FontSize="20"
+                        Foreground="White"
+                        Background="Transparent"
+                        Opacity="0.5" Height="24" MaxLength="22"/>
+                </WrapPanel>
+            </Border>
+        </WrapPanel>
+        <WrapPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border BorderBrush="Black" BorderThickness="2" Padding="1" Width="200">
+                <WrapPanel>
+                    <TextBox
+                        FontFamily="Helvetica"
+                        Name="emailEingabe"
+                        MouseEnter=""
+                        MouseLeave=""
+                        FontWeight="Light"
+                        Text="E-Mail"
+                        BorderThickness="0"
+                        MinWidth="178"
+                        FontSize="20"
+                        Foreground="White"
+                        Background="Transparent"
+                        Opacity="0.5" Height="24" MaxLength="22"/>
+                </WrapPanel>
+            </Border>
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border BorderBrush="Black" BorderThickness="2" Padding="1" Width="200">
+                <WrapPanel>
+                    <PasswordBox
+                        Name="passwortEingabe"
+                        FontFamily="Helvetica"
+                        MouseEnter=""
+                        MouseLeave=""
+                        FontWeight="Light"
+                        Password="Password"
+                        BorderThickness="0"
+                        MinWidth="178"
+                        FontSize="20"
+                        Foreground="White"
+                        Background="Transparent"
+                        Opacity="0.5" Height="24" MaxLength="12"/>
+                </WrapPanel>
+            </Border>
+        </WrapPanel>
+        <WrapPanel Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border BorderBrush="Black" BorderThickness="2" Padding="1" Width="200">
+                <WrapPanel>
+                    <PasswordBox
+                        x:Name="passwortEingabeWiederholen"
+                        FontFamily="Helvetica"
+                        MouseEnter=""
+                        MouseLeave=""
+                        FontWeight="Light"
+                        Password="Password"
+                        BorderThickness="0"
+                        MinWidth="178"
+                        FontSize="20"
+                        Foreground="White"
+                        Background="Transparent"
+                        Opacity="0.5" Height="24" MaxLength="12"/>
+                </WrapPanel>
+            </Border>
+        </WrapPanel>
+        
         <Button Grid.Row="4" Grid.Column="2" MinWidth="100" MaxWidth="150" MinHeight="50" MaxHeight="80" Click="registrierenBtn" Margin="62,0,63,0">
             <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
                 <TextBlock FontWeight="Bold">Registrieren</TextBlock>

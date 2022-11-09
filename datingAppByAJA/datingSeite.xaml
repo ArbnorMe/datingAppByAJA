@@ -21,7 +21,8 @@
             <RowDefinition Height="122*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="6*"></ColumnDefinition>
             <ColumnDefinition Width="31*"></ColumnDefinition>
             <ColumnDefinition Width="31*"></ColumnDefinition>
             <ColumnDefinition Width="34*"></ColumnDefinition>
@@ -29,21 +30,25 @@
             <ColumnDefinition Width="34*"></ColumnDefinition>
             <ColumnDefinition Width="32*"></ColumnDefinition>
             <ColumnDefinition Width="31*"></ColumnDefinition>
-            <ColumnDefinition Width="283*"></ColumnDefinition>
-            <ColumnDefinition Width="283*"></ColumnDefinition>
+            <ColumnDefinition Width="247*"></ColumnDefinition>
+            <ColumnDefinition Width="247*"></ColumnDefinition>
+            <ColumnDefinition Width="6*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Image Name="pictureBox" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="166" Width="158" Source="pictures/Rick_Astley.jpg" Grid.RowSpan="3" Grid.ColumnSpan="5"/>
-        <Button Grid.Row="2" Grid.Column="1" Content="back" Margin="0,1,0,0"/>
-        <Button Grid.Row="2" Grid.Column="7" Content="next" Margin="1,0,0,1"/>
-        <Button Grid.Row="5" Grid.Column="2" Content="Dislike" Margin="0,1,0,0"/>
-        <Button Grid.Row="5" Grid.Column="4" x:Name="Favorisieren_Button" Click="Favorisieren_Button_Click" Margin="0,1,0,0">
+        <Button Grid.RowSpan="7" Margin="2,0,0,0"></Button>
+        <Image Name="pictureBox" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top" Height="166" Width="158" Source="pictures/Rick_Astley.jpg" Grid.RowSpan="3" Grid.ColumnSpan="5"/>
+        <Button Grid.Row="2" Grid.Column="2" Content="back" Margin="0,1,0,0"/>
+        <Button Grid.Row="2" Grid.Column="8" Content="next" Margin="1,0,0,1"/>
+        <Button Grid.Row="5" Grid.Column="3" Content="Dislike" Margin="0,1,0,0"/>
+        <Button Grid.Row="5" Grid.Column="5" x:Name="Favorisieren_Button" Click="Favorisieren_Button_Click" Margin="0,1,0,0">
             <Viewbox>
                 <iconPacks:PackIconMaterial Kind="Heart" Height="25"/>
             </Viewbox>
         </Button>
-        <Button Grid.Row="5" Grid.Column="6" Margin="1,1,0,0" Content="Like"/>
-        <Button Grid.Row="6" Grid.Column="9" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="50" Content="Upload" x:Name="Btn_Upload" Click="Btn_Upload_Click" Grid.RowSpan="2"/>
-        <Button Grid.Row="6" Grid.Column="9" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="50" Width="50" Content="Save" x:Name="Btn_Save" Click="Btn_Save_Click" Margin="0,0,0,2"/>
+        <Button Grid.Row="5" Grid.Column="7" Margin="1,1,0,0" Content="Like"/>
+        <Button Grid.Row="6" Grid.Column="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="50" Content="Upload" x:Name="Btn_Upload" Click="Btn_Upload_Click" Grid.RowSpan="2"/>
+        <Button Grid.Row="6" Grid.Column="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="50" Width="50" Content="Save" x:Name="Btn_Save" Click="Btn_Save_Click" Margin="0,0,0,2"/>
+        <Button Grid.Column="12" Grid.RowSpan="7" Margin="0,0,2,0"></Button>
     </Grid>
 </Page>

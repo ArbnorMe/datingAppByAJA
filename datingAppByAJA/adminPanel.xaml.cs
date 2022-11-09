@@ -65,8 +65,7 @@ namespace datingAppByAJA
             if (adminCheckbox.IsChecked == true && userVorhanden == false)
             {
                 // Nutzer mit Admin Rechte wird erstellt
-                string sendenMitAdminRechte = $"Insert into {DBVerbindung.userTable}(passwordUser, email, adminRechte)" + $" values('{password}','{email}', 1)";
-                string user_table = $"Insert into {DBVerbindung.userTable}(username, passwordUser, email)" + $" values('{nutzername}','{password}','{email}')";
+                string user_table = $"Insert into {DBVerbindung.userTable}(username, passwordUser, email, adminRechte)" + $" values('{nutzername}','{password}','{email}', 1)";
                 string informationen_table = $"Insert into {DBVerbindung.informationsTable}(email)" + $" values('{email}')";
                 string userpictures_table = $"Insert into {DBVerbindung.userpicturesTable}(email)" + $" values('{email}')";
 
@@ -74,12 +73,13 @@ namespace datingAppByAJA
                 var command2 = new MySqlCommand(informationen_table, connection);
                 var command3 = new MySqlCommand(userpictures_table, connection);
 
-                var command = new MySqlCommand(sendenMitAdminRechte, connection);
                 try
                 {
                     // SQL Befehl wird ausgeführt
                     connection.Open();
-                    command.ExecuteNonQuery();
+                    command1.ExecuteNonQuery();
+                    command2.ExecuteNonQuery();
+                    command3.ExecuteNonQuery();
                     connection.Close();
 
                     MessageBox.Show("Nutzer mit Admin Rechte wurde erstellt.");
@@ -93,14 +93,20 @@ namespace datingAppByAJA
             else if (userVorhanden == false)
             {
                 // Nutzer ohne Admin Rechte wird erstellt
-                string senden = $"Insert into {DBVerbindung.userTable}(passwordUser, email)" + $" values('{password}','{email}')";
+                string user_table = $"Insert into {DBVerbindung.userTable}(username, passwordUser, email)" + $" values('{nutzername}','{password}','{email}')";
+                string informationen_table = $"Insert into {DBVerbindung.informationsTable}(email)" + $" values('{email}')";
+                string userpictures_table = $"Insert into {DBVerbindung.userpicturesTable}(email)" + $" values('{email}')";
 
-                var command = new MySqlCommand(senden, connection);
+                var command1 = new MySqlCommand(user_table, connection);
+                var command2 = new MySqlCommand(informationen_table, connection);
+                var command3 = new MySqlCommand(userpictures_table, connection);
                 try
                 {
                     // SQL Befehl wird ausgeführt
                     connection.Open();
-                    command.ExecuteNonQuery();
+                    command1.ExecuteNonQuery();
+                    command2.ExecuteNonQuery();
+                    command3.ExecuteNonQuery();
                     connection.Close();
 
                     MessageBox.Show("Nutzer wurde erstellt.");
@@ -189,7 +195,7 @@ namespace datingAppByAJA
                 string mySqlBefehl3 = $"DELETE FROM {DBVerbindung.informationsTable} WHERE (email = '{eingabe}')";
                 var command1 = new MySqlCommand(mySqlBefehl1, connection);
                 var command2 = new MySqlCommand(mySqlBefehl2, connection);
-                var command3 = new MySqlCommand(mySqlBefehl2, connection);
+                var command3 = new MySqlCommand(mySqlBefehl3, connection);
 
                 try
                 {

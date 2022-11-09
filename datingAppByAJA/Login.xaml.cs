@@ -66,6 +66,10 @@ namespace datingAppByAJA
                             AdminFenster DMS = new AdminFenster();
                             DMS.Show();
 
+                            UserDaten.idUser = Int32.Parse(reader["iduser"].ToString());
+                            UserDaten.username = reader["username"].ToString();
+                            UserDaten.email = reader["email"].ToString();
+
                             MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
                             if (window1 != null)
                             {
@@ -76,6 +80,10 @@ namespace datingAppByAJA
                         {
                             DatingMainScreen DMS = new DatingMainScreen();
                             DMS.Show();
+
+                            UserDaten.idUser = Int32.Parse(reader["iduser"].ToString());
+                            UserDaten.username = reader["username"].ToString();
+                            UserDaten.email = reader["email"].ToString();
 
                             MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
                             if (window1 != null)

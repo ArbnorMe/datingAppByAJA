@@ -30,8 +30,8 @@
             <ColumnDefinition Width="34*"></ColumnDefinition>
             <ColumnDefinition Width="32*"></ColumnDefinition>
             <ColumnDefinition Width="31*"></ColumnDefinition>
-            <ColumnDefinition Width="247*"></ColumnDefinition>
-            <ColumnDefinition Width="247*"></ColumnDefinition>
+            <ColumnDefinition Width="90*"></ColumnDefinition>
+            <ColumnDefinition Width="394*"></ColumnDefinition>
             <ColumnDefinition Width="6*"></ColumnDefinition>
             <ColumnDefinition Width="40*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
@@ -47,8 +47,32 @@
             </Viewbox>
         </Button>
         <Button Grid.Row="5" Grid.Column="7" Margin="1,1,0,0" Content="Like"/>
-        <Button Grid.Row="6" Grid.Column="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="50" Content="Upload" x:Name="Btn_Upload" Click="Btn_Upload_Click" Grid.RowSpan="2"/>
-        <Button Grid.Row="6" Grid.Column="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="50" Width="50" Content="Save" x:Name="Btn_Save" Click="Btn_Save_Click" Margin="0,0,0,2"/>
+
+        <Viewbox Grid.Column="9" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40">
+            <Label Content="Name:" Height="30" Width="90" Margin="0,0,0,0" Foreground="#FFF5EBEB"></Label>
+        </Viewbox>
+        <Viewbox Grid.Column="9" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40">
+            <Label Content="Alter:" Height="30" Width="90" Margin="0,0,0,0" Foreground="#FFF5EBEB"></Label>
+        </Viewbox>
+        <Viewbox Grid.Column="9" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40">
+            <Label Content="Geschlecht:" Height="30" Width="90" Margin="0,0,0,0" Foreground="#FFF5EBEB"></Label>
+        </Viewbox>
+        <Viewbox Grid.Column="9" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40">
+            <Label Content="Beschreibung:" Height="30" Width="90" Margin="0,0,0,0" Foreground="#FFF5EBEB"></Label>
+        </Viewbox>
+        <Viewbox Grid.Column="9" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Margin="0,19,0,0" Grid.RowSpan="2">
+            <Label Content="Hobbys:" Height="30" Width="90" Margin="0,0,0,0" Foreground="#FFF5EBEB"></Label>
+        </Viewbox>
+        <Viewbox Grid.Column="9" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40">
+            <Label Content="Beschreibung:" Height="30" Width="90" Margin="0,0,0,0" Foreground="#FFF5EBEB"></Label>
+        </Viewbox>
+        <TextBlock Grid.Column="10" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold" Height="40" Margin="0,20,0,0">Test</TextBlock>
+        <TextBlock Grid.Column="10" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold" Height="40" Grid.RowSpan="3" Margin="0,20,0,0">Test</TextBlock>
+        <TextBlock Grid.Column="10" Grid.Row="3" VerticalAlignment="Center" FontWeight="Bold" Height="40" Margin="0,20,0,0">Test</TextBlock>
+        <TextBlock Grid.Column="10" Grid.Row="3" VerticalAlignment="Center" FontWeight="Bold" Height="40" Grid.RowSpan="3" Margin="0,60,0,0">Test</TextBlock>
+        <TextBlock Grid.Column="10" Grid.Row="5" VerticalAlignment="Top" FontWeight="Bold" Height="40" Grid.RowSpan="2" Margin="0,25,0,0">Test</TextBlock>
+        <TextBlock Grid.Column="10" Grid.Row="6" VerticalAlignment="Center" FontWeight="Bold" Height="40" Margin="0,20,0,0">Test</TextBlock>
+
         <Button Grid.Column="12" Grid.RowSpan="7" Margin="0,0,2,0"></Button>
     </Grid>
 </Page>

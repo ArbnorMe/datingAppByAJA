@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MySqlConnector;
 using System.IO;
+using System.IO.MemoryMappedFiles;
 using Microsoft.Win32;
 
 namespace datingAppByAJA
@@ -85,7 +86,7 @@ namespace datingAppByAJA
                 MessageBox.Show(ex.Message);
             }
         }
-        private void Btn_Upload_Click(object sender, RoutedEventArgs e)
+        public void Btn_Upload_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Title = "Open Picture";
@@ -103,6 +104,10 @@ namespace datingAppByAJA
                     bi.EndInit();
 
                     pictureBox.Source = bi;
+                    byte[] imagearray = System.IO.File.ReadAllBytes(open.FileName);
+                    string texte = Convert.ToBase64String(imagearray);
+                    //imgLocation = texte;
+                    MessageBox.Show(texte);
                 }
                 catch (Exception ex)
                 {
@@ -121,18 +126,18 @@ namespace datingAppByAJA
 
             try
             {
+                
                 byte[] images = null;
                 FileStream streem = new FileStream(imgLocation, FileMode.Open, FileAccess.Read); // Hier findet der Fehler statt
-                BinaryReader brs = new BinaryReader(streem);
+                BinaryReader brs = new BinaryReader(streem, Encoding.UTF8);
                 images = brs.ReadBytes((int)streem.Length);
-
                 connection.Open();
-                string sqlQuery = $"Insert into {DBVerbindung.userpicturesTable}(email,Name,Image)Values'" + UserDaten.email + "','" + UserDaten.username + "Profilbild',@images";
+                string sqlQuery = $"Insert into {DBVerbindung.userpicturesTable}(email,FileName,myImage)Values'" + UserDaten.email + "','" + UserDaten.username;
                 cmd = new MySqlCommand(sqlQuery, connection);
-                cmd.Parameters.Add(new MySqlParameter("@images", images));
-                int n = cmd.ExecuteNonQuery();
+                cmd.Parameters.Add(new MySqlParameter("myImage", images));
+                //var n = cmd.ExecuteNonQuery();
                 connection.Close();
-                MessageBox.Show(n.ToString() + " Datei wurde erfolgreich gesichert....... ");
+                MessageBox.Show(" Datei wurde erfolgreich gesichert.......");
             }
             catch (Exception ex)
             {

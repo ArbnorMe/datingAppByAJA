@@ -108,5 +108,8 @@
                 <TextBlock Margin="10,10,10,10" FontWeight="Normal">BESTÄTIGEN</TextBlock>
             </Viewbox>
         </Button>
+        <Button Grid.Row="6" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="50" Width="50" Content="Upload" x:Name="Btn_Upload" Click="Btn_Upload_Click" Grid.RowSpan="2" Margin="81,0,0,0"/>
+        <Button Grid.Row="6" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="50" Width="50" Content="Save" x:Name="Btn_Save" Click="Btn_Save_Click" Margin="0,0,0,2" Grid.RowSpan="2"/>
+        <Image x:Name="pictureBox" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="166" Width="158" Source="/pictures/Rick_Astley.jpg" Grid.RowSpan="3" Margin="51,75,0,0"/>
     </Grid>
 </Page>

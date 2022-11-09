@@ -108,7 +108,12 @@ namespace datingAppByAJA
                         MessageBox.Show("command3 Fehler: " + ex.Message);
                     }
                     connection.Close();
-                    Main.Content = new datingSeite();
+                        // Dieser Code greift auf die MainWindow zu und setzt den Frame vom Registrieren Seite auf Login Seite
+                    MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+                    if (window1 != null)
+                    {
+                        window1.Main.Source = new Uri("Login.xaml", UriKind.Relative);
+                    }
                 }
                 else
                 {

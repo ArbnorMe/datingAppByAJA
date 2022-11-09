@@ -43,7 +43,8 @@
                     <TextBox
                         FontFamily="Helvetica"
                         Name="nutzernameEingabe"
-                        MouseLeave=""
+                        MouseEnter="nutzernameEingabe_MouseEnter"
+                        MouseLeave="nutzernameEingabe_MouseLeave"
                         FontWeight="Light"
                         Text="Nutzername"
                         BorderThickness="0"
@@ -61,8 +62,8 @@
                     <TextBox
                         FontFamily="Helvetica"
                         Name="emailEingabe"
-                        MouseEnter=""
-                        MouseLeave=""
+                        MouseEnter="emailEingabe_MouseEnter"
+                        MouseLeave="emailEingabe_MouseLeave"
                         FontWeight="Light"
                         Text="E-Mail"
                         BorderThickness="0"
@@ -81,8 +82,8 @@
                     <PasswordBox
                         Name="passwortEingabe"
                         FontFamily="Helvetica"
-                        MouseEnter=""
-                        MouseLeave=""
+                        MouseEnter="passwortEingabe_MouseEnter"
+                        MouseLeave="passwortEingabe_MouseLeave"
                         FontWeight="Light"
                         Password="Password"
                         BorderThickness="0"
@@ -100,8 +101,8 @@
                     <PasswordBox
                         x:Name="passwortEingabeWiederholen"
                         FontFamily="Helvetica"
-                        MouseEnter=""
-                        MouseLeave=""
+                        MouseEnter="passwortEingabeWiederholen_MouseEnter"
+                        MouseLeave="passwortEingabeWiederholen_MouseLeave"
                         FontWeight="Light"
                         Password="Password"
                         BorderThickness="0"

@@ -33,7 +33,7 @@
             <ColumnDefinition Width="283*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Image Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="166" Width="158" Source="pictures/Rick_Astley.jpg" Grid.RowSpan="3" Grid.ColumnSpan="5"/>
+        <Image Name="pictureBox" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="166" Width="158" Source="pictures/Rick_Astley.jpg" Grid.RowSpan="3" Grid.ColumnSpan="5"/>
         <Button Grid.Row="2" Grid.Column="1" Content="back" Margin="0,1,0,0"/>
         <Button Grid.Row="2" Grid.Column="7" Content="next" Margin="1,0,0,1"/>
         <Button Grid.Row="5" Grid.Column="2" Content="Dislike" Margin="0,1,0,0"/>

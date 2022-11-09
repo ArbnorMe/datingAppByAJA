@@ -109,18 +109,18 @@ namespace datingAppByAJA
             connection.Open();
             MySqlCommand command = connection.CreateCommand();
 
-            string sql = $"UPDATE {DBVerbindung.userpicturesTable} SET MyImage = (SELECT * FROM OPENROWSET(BULK N'{imgLocation}', SINGLE_BLOB) as tempimg), FileName = '{imgLocation}' WHERE email = {UserDaten.email} ;";
+            string sql = $"UPDATE {DBVerbindung.userpicturesTable} SET MyImage = LOAD_FILE('{imgLocation}'), FileName = '{imgLocation}' WHERE email = '{UserDaten.email}';";
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             adapter.UpdateCommand = new MySqlCommand(sql, connection);
             try
             {
                 if (adapter.UpdateCommand.ExecuteNonQuery() > 0)
                 {
-                    MessageBox.Show("Funzt");
+                    MessageBox.Show("Funktioniert mein Lord!");
                 }
                 else
                 {
-                    MessageBox.Show("122");
+                    MessageBox.Show("Funktioniert nicht!");
                 }
             }
             catch (Exception ex)
@@ -138,7 +138,7 @@ namespace datingAppByAJA
             OpenFileDialog open = new OpenFileDialog();
             open.Title = "Open Picture";
             open.Multiselect = false;
-            open.Filter = "Image Files(.jpg;.jpeg; .gif;.bmp)|.jpg;.jpeg; .gif;.bmp";
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
 
             if (open.ShowDialog() == true)
             {

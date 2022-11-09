@@ -61,16 +61,15 @@ namespace datingAppByAJA
             { VornameText.Text = "Eingabe"; }
         }
 
-        private void Bestätigen_Click(object sender, RoutedEventArgs e)
+        private void Besteatigen_Click(object sender, RoutedEventArgs e)
         {
             //Sind die 3 Boxen wo man seine Daten eingeben kann
             string name = NameText.Text;
             string vorname = VornameText.Text;
             string geschlecht = GeschlechtBox.Text;
-            var con =
-                new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
+            var con = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
             //Die 3 Boxen werden damit in der Datenbank gespeichert
-            string query = $"Insert into {DBVerbindung.informationsTable}(firstname, lastname, geschlecht)" + $" values('{name}','{vorname}','{geschlecht}')";
+            string query = $"UPDATE {DBVerbindung.informationsTable} SET firstname = '{vorname}', lastname = '{name}', geschlecht = '{geschlecht}'  WHERE email = '{UserDaten.email}';";
             var command = new MySqlCommand(query, con);
             
             try
@@ -79,6 +78,7 @@ namespace datingAppByAJA
                 command.ExecuteNonQuery();
                 con.Close();
 
+                MessageBox.Show("Deine Einstellungen wurden geändert!");
             }
             catch (Exception ex)
             {

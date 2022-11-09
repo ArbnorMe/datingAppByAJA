@@ -103,7 +103,7 @@
             <ComboBoxItem Content="Female"/>
             <ComboBoxItem Content="Diverse"/>
         </ComboBox>
-        <Button MinWidth="100" MaxWidth="150" MinHeight="40" MaxHeight="80" Click="Bestätigen_Click" Grid.Row="6" Grid.Column="1">
+        <Button MinWidth="100" MaxWidth="150" MinHeight="40" MaxHeight="80" Click="Besteatigen_Click" Grid.Row="6" Grid.Column="1">
             <Viewbox>
                 <TextBlock Margin="10,10,10,10" FontWeight="Normal">BESTÄTIGEN</TextBlock>
             </Viewbox>

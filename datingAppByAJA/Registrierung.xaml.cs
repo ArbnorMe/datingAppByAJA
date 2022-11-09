@@ -81,17 +81,34 @@ namespace datingAppByAJA
                     {
                         // SQL Befehl wird ausgeführt
                         command1.ExecuteNonQuery();
-                        command2.ExecuteNonQuery();
-                        command3.ExecuteNonQuery();
-                        connection.Close();
-
-                        MessageBox.Show("Nutzer wurde erstellt.");
                     }
                     catch (Exception ex)
                     {
                         // Fehler Ausgabe
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show("command1 Fehler: " + ex.Message);
                     }
+                    try
+                    {
+                        // SQL Befehl wird ausgeführt
+                        command2.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Fehler Ausgabe
+                        MessageBox.Show("command2 Fehler: " + ex.Message);
+                    }
+                    try
+                    {
+                        // SQL Befehl wird ausgeführt
+                        command3.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Fehler Ausgabe
+                        MessageBox.Show("command3 Fehler: " + ex.Message);
+                    }
+                    connection.Close();
+                    Main.Content = new datingSeite();
                 }
                 else
                 {

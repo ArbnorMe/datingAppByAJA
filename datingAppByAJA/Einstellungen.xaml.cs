@@ -27,7 +27,7 @@ namespace datingAppByAJA
 
 
 
-
+        //Damit wenn man mit der Maus reingeht verschwindet der Template Text
         private void NameEingabeEnter(object sender, MouseEventArgs e)
         {
             if (NameText.Text == "Eingabe")
@@ -35,7 +35,7 @@ namespace datingAppByAJA
                 NameText.Clear();
             }
         }
-
+        //Damit wenn man mit der Maus rausgeht erscheint der Template Text, wenn dort nichts reingeschrieben wurde
         private void NameEingabeLeave(object sender, MouseEventArgs e)
         {
             if (NameText.Text == "")
@@ -58,12 +58,13 @@ namespace datingAppByAJA
 
         private void Bestätigen_Click(object sender, RoutedEventArgs e)
         {
+            //Sind die 3 Boxen wo man seine Daten eingeben kann
             string name = NameText.Text;
             string vorname = VornameText.Text;
             string geschlecht = GeschlechtBox.Text;
             var con =
                 new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");
-
+            //Die 3 Boxen werden damit in der Datenbank gespeichert
             string query = $"Insert into {DBVerbindung.informationsTable}(firstname, lastname, geschlecht)" + $" values('{name}','{vorname}','{geschlecht}')";
             var command = new MySqlCommand(query, con);
             

@@ -29,6 +29,7 @@ namespace datingAppByAJA
 
         private void Favorisieren_Button_Click(object sender, RoutedEventArgs e)
         {
+            //Wenn man den Button drückt wird der Rot
             Favorisieren_Button.Background = new SolidColorBrush(Colors.Red);
         }
 
@@ -56,10 +57,9 @@ namespace datingAppByAJA
                         //Pictures.Source = bi;
                     }
                     catch (System.Exception c) { Console.Write("Exception" + c); }
-                }
-                
+                }                
             }
-            }
+        }
 
         private void Btn_Save_Click(object sender, RoutedEventArgs e)
         {

@@ -26,6 +26,7 @@ namespace datingAppByAJA
             InitializeComponent();
         }
 
+        //Greift auf den Frame vom MainWindow zu und aktualisiert darüber den Frame in dem Beispiel zur Registrierungs Seite
         private void Register_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window1 = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
@@ -37,6 +38,7 @@ namespace datingAppByAJA
 
         private void Login_Click_1(object sender, RoutedEventArgs e)
         {
+            //Die Strings Speichern die Daten die man Eingegeben hat
             string password = PasswortPasswordBox.Password.ToString();
             string email = EmailTextBox.Text;
             var connection = new MySqlConnection($"server={DBVerbindung.serverMySql};user id={DBVerbindung.userIdMySql};password={DBVerbindung.passwordMySql};database={DBVerbindung.databaseMySql}");

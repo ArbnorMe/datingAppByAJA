@@ -37,6 +37,7 @@ namespace datingAppByAJA
             //Farben.Background = new LinearGradientBrush(Colors.LightBlue, Colors.SlateBlue, 90);
         }
 
+        //Damit der Frame die Seiten wechselt, wenn man auf die Buttons drückt
         private void BtnRegistrieren(object sender, RoutedEventArgs e)
         {
             Main.Content = new Registrierung();
@@ -59,11 +60,13 @@ namespace datingAppByAJA
                 DragMove();
         }
 
+        //Lässt das Programm schließen
         private void Btn_Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        //Minimiert das Programm
         private void Btn_Minimize_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
